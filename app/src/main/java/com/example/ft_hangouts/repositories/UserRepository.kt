@@ -5,11 +5,14 @@ import com.example.ft_hangouts.User
 import com.example.ft_hangouts.datalayer.AppDatabase
 
 class UserRepository(database: AppDatabase) {
-    private val TAG = "User store class"
+    private val TAG = "UserRepository class"
     val userDao = database.userDao()
     private var localList: List<User> = emptyList()
 
 
+    fun getLocalList() : List<User> {
+        return localList
+    }
     suspend fun updateLocalList() {
         val currentList = retrieveAll()
         if (localList.isEmpty()) {
