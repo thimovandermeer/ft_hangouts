@@ -25,7 +25,6 @@ data class User(
 class RegisterViewModel(application: Application): AndroidViewModel(application) {
 
     private val TAG = "RegisterViewModel"
-
     val db = Room.databaseBuilder(
         application,
         AppDatabase::class.java, "database-name"
@@ -34,6 +33,7 @@ class RegisterViewModel(application: Application): AndroidViewModel(application)
     private var UserRepository: UserRepository
     init {
         UserRepository = UserRepository(database = db)
+        UserRepository.getAllOnStartUp()
     }
 
     private fun isEmpty(str: CharSequence?): Boolean {
@@ -55,51 +55,84 @@ class RegisterViewModel(application: Application): AndroidViewModel(application)
     }
 
     private fun userExists(user : String) :Boolean {
-        return UserRepository.searchLocalList(user) != null
+        return UserRepository.searchLocalListUser(user) != null
     }
 
-    fun userInvalid() : Boolean {
-        // digt moe
+    private fun emailExists(email: String): Boolean {
+        return UserRepository.searchLocalListEmail(email) != null
+    }
+
+    private fun passwordExists(password: String) : Boolean {
+        return UserRepository.searchLocalListPassword(password) != null
+    }
+
+    private fun isNumeric(string : String) : Boolean {
+        return string.all { char -> char.isDigit()}
+    }
+
+    fun userValid(username: String) : Boolean {
+        if(isNumeric(username))
+            return false
         return true
     }
 
-    fun handleInput(
-        username : String,
-        email : String,
-        password: String
-    ) {
-        if (isValidEmail(email)) {
-            // toast message that email is invalid
-        }
+    enum class state {USERNAMEINVALID,USERALREADYEXISTS, EMAILINVALID, EMAILEXISTS, PASSWORDINVALID, PASSWORDEXISTS, INPROGRESS, SUCCESS}
 
-        if (!isValidPassword(password)) {
-            // toast message that password is invalid
-        }
-
-        if (userInvalid()) {
-            // toast message user invalid
+    private fun validateInput(username: String, email: String, password: String) : state {
+        if (!userValid(username)) {
+            return state.USERNAMEINVALID
         }
 
         if (userExists(username)) {
-            // toast message user already exists
+            return state.USERALREADYEXISTS
         }
 
+        if (email.isEmpty() && isValidEmail(email)) {
+            return state.EMAILINVALID
+        }
 
-        val new = User("0",username, password, email)
-        Log.d(TAG, "Inside suspend function")
-        insertUser(new)
-        Log.d(TAG, username)
-        Log.d(TAG, email)
-        Log.d(TAG, password)
+        if (emailExists(email)) {
+            Log.d(TAG, "Email exists")
+            return state.EMAILEXISTS
+        }
+
+        if (!password.isEmpty() && !isValidPassword(password)) {
+            return state.PASSWORDINVALID
+        }
+
+        if (passwordExists(password)) {
+            return state.PASSWORDEXISTS
+        }
+        return state.INPROGRESS
     }
 
-    fun insertUser(user: User) = runBlocking{
+    suspend fun handleInput(
+        username : String,
+        email : String,
+        password: String
+    ) : state {
+        var ret : state;
+        Log.d(TAG, "Handle input called")
+        ret = validateInput(username, email, password)
+        Log.d(TAG, "State is after validation $ret")
+        if (ret == state.INPROGRESS) {
+            Log.d(TAG, "State success")
+            insertUser(username, email, password)
+            ret = state.SUCCESS
+        }
+        return ret
+    }
+
+    suspend fun insertUser(username: String, email: String, password: String) {
         Log.d(TAG, "Insert in database")
-        UserRepository.save(user)
+        coroutineScope {
+            launch {
+                UserRepository.save(username, email, password)
+            }
+        }
     }
 
     private suspend fun searchUser(user : String) = coroutineScope {
-
         Log.d(TAG, "Searching user in database")
         UserRepository.search(user)
     }

@@ -11,7 +11,6 @@ import com.example.ft_hangouts.datalayer.AppDatabase
 import kotlinx.coroutines.runBlocking
 import org.junit.After
 import org.junit.Assert.*
-import org.junit.Before
 
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -33,10 +32,6 @@ class UserRepositoryTest {
         userRepository = UserRepository(database = db)
     }
 
-    @Before
-    fun createDb() {
-
-    }
 
     @After
     @Throws(IOException::class)
@@ -45,15 +40,10 @@ class UserRepositoryTest {
     }
 
     @Test
-    fun TestretrieveAll() {
-
-    }
-
-    @Test
     fun Testsave() {
-        val user = User("1", "Thimo", "Doeidoei","thimo@gmail.com")
+        val user = User(userRepository.getUuid().toString(), "Thimo", "Doeidoei","thimo@gmail.com")
         runBlocking {
-            userRepository.save(user)
+            userRepository.save("Thimo","thimo@gmail.com", "Doeidoei")
         }
         val byname = userRepository.search("Thimo")
         assertEquals(user, byname)
@@ -62,9 +52,8 @@ class UserRepositoryTest {
     fun create_database_members() {
         var i = 0
         while(i != 100) {
-            var user = User(i.toString(), "thimo$i", "Doeidoei$i", "Thimo$i@gmail.com")
             runBlocking {
-                userRepository.save(user)
+                userRepository.save("thimo$i", "Doeidoei$i", "Thimo$i@gmail.com")
             }
             i++
         }
@@ -83,7 +72,7 @@ class UserRepositoryTest {
         Log.d(TAG, "Size is $oldsize")
         val user = User("101", "Karina", "hallohallo", "karina@gmail.com")
         runBlocking {
-            userRepository.save(user)
+            userRepository.save( "Karina", "hallohallo", "karina@gmail.com")
         }
         val newsize = userRepository.getLocalList().size
         Log.d(TAG, "New size = $newsize")
@@ -91,12 +80,27 @@ class UserRepositoryTest {
     }
 
     @Test
-    fun TestsearchLocalList() {
-        val user = userRepository.searchLocalList("thimo80")
+    fun TestsearchLocalListUser() {
+        val user = userRepository.searchLocalListUser("thimo80")
         if (user != null) {
             assertEquals("thimo80", user.Name)
         }
+    }
 
+    @Test
+    fun TestsearchLocalListEmail() {
+        val user = userRepository.searchLocalListEmail("thimo@gmail.com")
+        if (user != null) {
+            assertEquals("thimo@gmail.com", user.email)
+        }
+    }
+
+    @Test
+    fun TestsearchLocalListPassword() {
+        val user = userRepository.searchLocalListPassword("doeidoei")
+        if (user != null) {
+            assertEquals("doeidoei", user.password)
+        }
     }
 
     @Test
