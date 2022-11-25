@@ -71,8 +71,7 @@ class UserRepository(database: AppDatabase) {
     }
 
     fun search(user: String) : User {
-        Log.d(TAG, "Search function is called")
+        Log.d(TAG, "Search function is called, ja toch")
         return this.userDao.search(user)
     }
-
 }
