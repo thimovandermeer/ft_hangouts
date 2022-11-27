@@ -11,6 +11,8 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import com.example.ft_hangouts.RegisterViewModel
 import com.example.ft_hangouts.Routes
@@ -21,14 +23,13 @@ import com.example.ft_hangouts.screen.SignUp.Usernamecomposeable
 
 @Composable
 fun SignUp(navController: NavHostController) {
-
     Box(modifier = Modifier.fillMaxSize()) {
         Inputfields(navController)
     }
 }
 
 @Composable
-fun Inputfields(navController: NavHostController, viewModel: RegisterViewModel = androidx.lifecycle.viewmodel.compose.viewModel()) {
+fun Inputfields(navController: NavHostController, viewModel: RegisterViewModel = hiltViewModel()) {
     Column(
         modifier = Modifier.padding(20.dp),
         verticalArrangement = Arrangement.Center,
@@ -50,6 +51,7 @@ fun Inputfields(navController: NavHostController, viewModel: RegisterViewModel =
         Log.d("Inputfields", "accept.value = ${accept.value}")
         if (accept.value == RegisterViewModel.state.SUCCESS) {
             Log.d("Inputfields", "Lets go")
+            accept.value = RegisterViewModel.state.INPROGRESS
             navController.navigate(Routes.Login.route)
         }
 

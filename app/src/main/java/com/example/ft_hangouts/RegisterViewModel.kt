@@ -1,20 +1,19 @@
 package com.example.ft_hangouts
 
-import android.app.Application
 import android.util.Log
-import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.ViewModel
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import androidx.room.Room
-import com.example.ft_hangouts.datalayer.AppDatabase
-import com.example.ft_hangouts.repositories.UserRepository
+import com.example.ft_hangouts.repositories.User.UserRepository
+import com.example.ft_hangouts.repositories.User.UserRepositoryImpl
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.*
+import javax.inject.Inject
 
 
 @Entity
 data class User(
-
 
     @PrimaryKey val uid: String,
     @ColumnInfo(name = "Name") val Name: String?,
@@ -22,19 +21,12 @@ data class User(
     @ColumnInfo(name = "Email") val email: String?
 )
 
-class RegisterViewModel(application: Application): AndroidViewModel(application) {
+@HiltViewModel
+class RegisterViewModel @Inject constructor(
+    private val UserRepository: UserRepository
+) : ViewModel() {
 
     private val TAG = "RegisterViewModel"
-    val db = Room.databaseBuilder(
-        application,
-        AppDatabase::class.java, "database-name"
-    ).build()
-
-    private var UserRepository: UserRepository
-    init {
-        UserRepository = UserRepository(database = db)
-        UserRepository.getAllOnStartUp()
-    }
 
     private fun isEmpty(str: CharSequence?): Boolean {
         return str == null || str.length == 0

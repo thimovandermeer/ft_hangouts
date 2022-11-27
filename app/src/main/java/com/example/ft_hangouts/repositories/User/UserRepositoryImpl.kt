@@ -1,36 +1,39 @@
-package com.example.ft_hangouts.repositories
+package com.example.ft_hangouts.repositories.User
 
 import android.util.Log
 import com.example.ft_hangouts.User
-import com.example.ft_hangouts.datalayer.AppDatabase
+import com.example.ft_hangouts.dao.UserDao
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class UserRepository(database: AppDatabase) {
+
+class UserRepositoryImpl @Inject constructor(
+    private val userDao : UserDao) : UserRepository
+{
     private val TAG = "UserRepository class"
-    val userDao = database.userDao()
     private var _localList: List<User> = emptyList()
     private var _uuid = 0
 
-    fun getUuid() : Int {
+    override fun getUuid() : Int {
         return _uuid
     }
 
-    fun incrementUuid() {
+    override fun incrementUuid() {
         _uuid++
     }
 
-    fun getAllOnStartUp() {
+    override fun getAllOnStartUp() {
         CoroutineScope(Dispatchers.IO).launch {
                 _localList = retrieveAll()
         }
     }
 
-    fun getLocalList() : List<User> {
+    override fun getLocalList() : List<User> {
         return _localList
     }
-    suspend fun updateLocalList() {
+    override suspend fun updateLocalList() {
         val currentList = retrieveAll()
         Log.d(TAG, "currentlist = $currentList")
         if (_localList.isEmpty()) {
@@ -43,25 +46,25 @@ class UserRepository(database: AppDatabase) {
         Log.d(TAG, "locallist in update list $_localList")
     }
 
-    fun searchLocalListUser(user : String) : User? {
+    override fun searchLocalListUser(user : String) : User? {
         return _localList.find {it.Name == user}
     }
 
-    fun searchLocalListEmail(email: String) : User? {
+    override fun searchLocalListEmail(email: String) : User? {
         Log.d(TAG, email)
         Log.d(TAG, "Locallist = $_localList")
         return _localList.find {it.email == email}
     }
 
-    fun searchLocalListPassword(password: String) : User? {
+    override fun searchLocalListPassword(password: String) : User? {
         return _localList.find {it.password == password}
     }
 
-    fun retrieveAll() : List<User> {
+    override fun retrieveAll() : List<User> {
         return this.userDao.queryAll()
     }
 
-    suspend fun save(username: String, email:String, password:String) {
+    override suspend fun save(username: String, email:String, password:String) {
         val uuid = getUuid()
         val new = User(uuid.toString(), username, password, email)
         incrementUuid()
@@ -70,7 +73,7 @@ class UserRepository(database: AppDatabase) {
         updateLocalList()
     }
 
-    fun search(user: String) : User {
+    override fun search(user: String) : User {
         Log.d(TAG, "Search function is called")
         return this.userDao.search(user)
     }
