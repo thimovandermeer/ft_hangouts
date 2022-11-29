@@ -12,7 +12,6 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.ft_hangouts.RegisterViewModel
-import com.example.ft_hangouts.Routes
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -20,7 +19,7 @@ import kotlinx.coroutines.withContext
 @Composable
 fun Registercomposable(
     navController: NavHostController,
-    accept: MutableState<RegisterViewModel.state>,
+    accept: MutableState<RegisterViewModel.RegisterState>,
     viewModel: RegisterViewModel,
     username: MutableState<TextFieldValue>,
     password: MutableState<TextFieldValue>,

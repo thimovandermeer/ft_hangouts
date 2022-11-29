@@ -16,6 +16,11 @@ class UserRepositoryImpl @Inject constructor(
     private var _localList: List<User> = emptyList()
     private var _uuid = 0
 
+    init {
+        Log.d(TAG, "INIT function")
+        getAllOnStartUp()
+    }
+
     override fun getUuid() : Int {
         return _uuid
     }

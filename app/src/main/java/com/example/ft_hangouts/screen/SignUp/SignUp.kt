@@ -12,7 +12,6 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import com.example.ft_hangouts.RegisterViewModel
 import com.example.ft_hangouts.Routes
@@ -39,7 +38,7 @@ fun Inputfields(navController: NavHostController, viewModel: RegisterViewModel =
         val username = remember { mutableStateOf(TextFieldValue()) }
         val email = remember {mutableStateOf(TextFieldValue()) }
         val password = remember { mutableStateOf(TextFieldValue()) }
-        val accept : MutableState<RegisterViewModel.state> = remember {mutableStateOf(RegisterViewModel.state.INPROGRESS)}
+        val accept : MutableState<RegisterViewModel.RegisterState> = remember {mutableStateOf(RegisterViewModel.RegisterState.INPROGRESS)}
         Text(text = "Register", style = TextStyle(fontSize = 40.sp, fontFamily = FontFamily.Cursive))
 
         Spacer(modifier = Modifier.height(20.dp))
@@ -49,12 +48,10 @@ fun Inputfields(navController: NavHostController, viewModel: RegisterViewModel =
         Passwordcomposable(accept, password)
         Registercomposable(navController,accept, viewModel, username, password, email)
         Log.d("Inputfields", "accept.value = ${accept.value}")
-        if (accept.value == RegisterViewModel.state.SUCCESS) {
+        if (accept.value == RegisterViewModel.RegisterState.SUCCESS) {
             Log.d("Inputfields", "Lets go")
-            accept.value = RegisterViewModel.state.INPROGRESS
+            accept.value = RegisterViewModel.RegisterState.INPROGRESS
             navController.navigate(Routes.Login.route)
         }
-
-
     }
 }

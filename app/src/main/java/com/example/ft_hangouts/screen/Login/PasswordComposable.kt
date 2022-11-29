@@ -1,4 +1,4 @@
-package com.example.ft_hangouts.screen.SignUp
+package com.example.ft_hangouts.screen.Login
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
@@ -13,30 +13,22 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
-import com.example.ft_hangouts.RegisterViewModel
+import com.example.ft_hangouts.ViewModels.LoginViewModel
 
 @Composable
-fun Passwordcomposable(
-    accept: MutableState<RegisterViewModel.RegisterState>,
-    password: MutableState<TextFieldValue>
+fun PasswordComposable(
+    password: MutableState<TextFieldValue>,
+    loginstate: MutableState<LoginViewModel.LoginState>
 ) {
-    if (accept.value == RegisterViewModel.RegisterState.PASSWORDINVALID) {
-        Spacer(modifier = Modifier.height(20.dp))
+    Spacer(modifier = Modifier.height(20.dp))
+    if(loginstate.value == LoginViewModel.LoginState.PASSWORDINCORRECT) {
         TextField(
-            label = { Text(text = "Password invalid", color = Color.Red) },
+            label = { Text(text = "Password In correct", color = Color.Red) },
             value = password.value,
             visualTransformation = PasswordVisualTransformation(),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
             onValueChange = { password.value = it })
-    } else if (accept.value == RegisterViewModel.RegisterState.PASSWORDEXISTS) {
-        TextField(
-            label = { Text(text = "Password already exists", color = Color.Red) },
-            value = password.value,
-            visualTransformation = PasswordVisualTransformation(),
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
-            onValueChange = { password.value = it })
-    }else {
-        Spacer(modifier = Modifier.height(20.dp))
+    } else {
         TextField(
             label = { Text(text = "Password") },
             value = password.value,

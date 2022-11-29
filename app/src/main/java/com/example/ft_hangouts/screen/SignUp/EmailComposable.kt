@@ -1,6 +1,5 @@
 package com.example.ft_hangouts.screen.SignUp
 
-import android.util.Log
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.material.Text
@@ -15,17 +14,17 @@ import com.example.ft_hangouts.RegisterViewModel
 
 @Composable
 fun Emailcomposable(
-    accept: MutableState<RegisterViewModel.state>,
+    accept: MutableState<RegisterViewModel.RegisterState>,
     email: MutableState<TextFieldValue>
 ) {
     val TAG = "Email composable"
-    if (accept.value == RegisterViewModel.state.EMAILINVALID) {
+    if (accept.value == RegisterViewModel.RegisterState.EMAILINVALID) {
         Spacer(modifier = Modifier.height(20.dp))
         TextField(
             label = { Text(text = "email invalid", color = Color.Red) },
             value = email.value,
             onValueChange = { email.value = it })
-    } else if (accept.value == RegisterViewModel.state.EMAILEXISTS) {
+    } else if (accept.value == RegisterViewModel.RegisterState.EMAILEXISTS) {
         Spacer(modifier = Modifier.height(20.dp))
         TextField(
             label = { Text(text = "email already exists", color = Color.Red) },

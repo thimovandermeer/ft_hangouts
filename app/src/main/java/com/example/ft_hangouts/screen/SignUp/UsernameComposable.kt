@@ -9,14 +9,14 @@ import androidx.compose.ui.text.input.TextFieldValue
 import com.example.ft_hangouts.RegisterViewModel
 
 @Composable
-fun Usernamecomposeable(accept: MutableState<RegisterViewModel.state>, username: MutableState<TextFieldValue>) {
-    if (accept.value == RegisterViewModel.state.USERNAMEINVALID) {
+fun Usernamecomposeable(accept: MutableState<RegisterViewModel.RegisterState>, username: MutableState<TextFieldValue>) {
+    if (accept.value == RegisterViewModel.RegisterState.USERNAMEINVALID) {
         TextField(
 
             label = { Text(text = "Username invalid", color = Color.Red) },
             value = username.value,
             onValueChange = { username.value = it })
-    } else if (accept.value == RegisterViewModel.state.USERALREADYEXISTS) {
+    } else if (accept.value == RegisterViewModel.RegisterState.USERALREADYEXISTS) {
         TextField(
             label = { Text(text = "Username already exists", color = Color.Red) },
             value = username.value,

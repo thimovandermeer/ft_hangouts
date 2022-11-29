@@ -6,7 +6,6 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.example.ft_hangouts.repositories.User.UserRepository
-import com.example.ft_hangouts.repositories.User.UserRepositoryImpl
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.*
 import javax.inject.Inject
@@ -68,49 +67,49 @@ class RegisterViewModel @Inject constructor(
         return true
     }
 
-    enum class state {USERNAMEINVALID,USERALREADYEXISTS, EMAILINVALID, EMAILEXISTS, PASSWORDINVALID, PASSWORDEXISTS, INPROGRESS, SUCCESS}
+    enum class RegisterState {USERNAMEINVALID,USERALREADYEXISTS, EMAILINVALID, EMAILEXISTS, PASSWORDINVALID, PASSWORDEXISTS, INPROGRESS, SUCCESS}
 
-    private fun validateInput(username: String, email: String, password: String) : state {
+    private fun validateInput(username: String, email: String, password: String) : RegisterState {
         if (!userValid(username)) {
-            return state.USERNAMEINVALID
+            return RegisterState.USERNAMEINVALID
         }
 
         if (userExists(username)) {
-            return state.USERALREADYEXISTS
+            return RegisterState.USERALREADYEXISTS
         }
 
         if (email.isEmpty() && isValidEmail(email)) {
-            return state.EMAILINVALID
+            return RegisterState.EMAILINVALID
         }
 
         if (emailExists(email)) {
             Log.d(TAG, "Email exists")
-            return state.EMAILEXISTS
+            return RegisterState.EMAILEXISTS
         }
 
         if (!password.isEmpty() && !isValidPassword(password)) {
-            return state.PASSWORDINVALID
+            return RegisterState.PASSWORDINVALID
         }
 
         if (passwordExists(password)) {
-            return state.PASSWORDEXISTS
+            return RegisterState.PASSWORDEXISTS
         }
-        return state.INPROGRESS
+        return RegisterState.INPROGRESS
     }
 
     suspend fun handleInput(
         username : String,
         email : String,
         password: String
-    ) : state {
-        var ret : state;
+    ) : RegisterState {
+        var ret : RegisterState;
         Log.d(TAG, "Handle input called")
         ret = validateInput(username, email, password)
         Log.d(TAG, "State is after validation $ret")
-        if (ret == state.INPROGRESS) {
+        if (ret == RegisterState.INPROGRESS) {
             Log.d(TAG, "State success")
             insertUser(username, email, password)
-            ret = state.SUCCESS
+            ret = RegisterState.SUCCESS
         }
         return ret
     }
