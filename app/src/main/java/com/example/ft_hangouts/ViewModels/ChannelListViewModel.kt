@@ -1,7 +1,7 @@
 package com.example.ft_hangouts.ViewModels
 
 import androidx.lifecycle.ViewModel
-import com.example.ft_hangouts.repositories.Chat.Channel
+import com.example.ft_hangouts.repositories.Chat.Chats
 import com.example.ft_hangouts.repositories.Chat.ChannelRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -10,9 +10,9 @@ import javax.inject.Inject
 class ChannelListViewModel @Inject constructor(
     private val ChannelRepository: ChannelRepository
 ) : ViewModel() {
-    val channelList : List<Channel> = emptyList()
+    val chatsList : List<Chats> = emptyList()
 
-    fun getChannels() : List<Channel> {
-        return ChannelRepository.getChannels()
+    fun getChannels() : List<Chats> {
+        return ChannelRepository.getChats()
     }
 }

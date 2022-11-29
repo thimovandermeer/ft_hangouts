@@ -6,7 +6,7 @@ class ChannelRepositoryImpl @Inject constructor(
 ) : ChannelRepository
 {
     // fake data because we still need to setup the entire API structure and backend
-    private val _channelList : MutableList<Channel> = arrayListOf()
+    private val _chatsList : MutableList<Chats> = arrayListOf()
     private val TAG = "ChannelRepositoryImpl"
 
     init{
@@ -16,12 +16,12 @@ class ChannelRepositoryImpl @Inject constructor(
         var i = 0
 
         while(i < 10) {
-            var channel : Channel = Channel(i.toString(), "Channel$i")
-            _channelList.add(channel)
+            var chats : Chats = Chats(i.toString(), "Mohammed$i")
+            _chatsList.add(chats)
             i++
         }
     }
-    override fun getChannels() : List<Channel> {
-        return _channelList
+    override fun getChats() : List<Chats> {
+        return _chatsList
     }
 }

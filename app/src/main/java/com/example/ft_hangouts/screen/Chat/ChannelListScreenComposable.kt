@@ -18,20 +18,24 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.example.ft_hangouts.Routes
 import com.example.ft_hangouts.ViewModels.ChannelListViewModel
 import com.example.ft_hangouts.ViewModels.LoginViewModel
 
 @Composable
 fun ChannelListScreen(navController: NavController, viewModel: ChannelListViewModel = hiltViewModel()) {
-    val channels = viewModel.getChannels()
-    Log.d("ChannelListComposable, " , "channels = $channels")
+    val chats = viewModel.getChannels()
+    Log.d("ChannelListComposable, " , "channels = $chats")
     Box( // 3
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center,
     ) {
         LazyColumn(Modifier.fillMaxSize()) { // 5
-            items(channels) { channel ->
-                ChannelListItem(channel)
+            items(chats) { chat ->
+                ChannelListItem(
+                    chats = chat,
+                    onClick = {navController.navigate("MessageList/${chat.uid}")},
+                )
                 Divider()
             }
         }
