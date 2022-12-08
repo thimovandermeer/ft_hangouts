@@ -1,3 +1,287 @@
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "text": "Hello!"
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "text": "Bonjour!"
+}
+
+<> 2022-12-08T104022.500.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "text": "Bonjour!"
+}
+
+<> 2022-12-08T103740.500.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "text": "Bonjour!"
+}
+
+<> 2022-12-08T103623.500.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "text": "Bonjour!",
+  "ID": "101010"
+}
+
+<> 2022-12-08T103413.500.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "text": "Bonjour!"
+}
+
+<> 2022-12-08T102609.500.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "text": "Bonjour!"
+}
+
+<> 2022-12-08T102340.500.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "text": "Bonjour!"
+}
+
+<> 2022-12-08T102336.500.json
+
+###
+
+GET http://localhost:8080
+
+<> 2022-12-08T102306.200.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "text": "Privet!"
+}
+
+<> 2022-12-08T102302.500.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "text": "Privet!"
+}
+
+<> 2022-12-08T102259.500.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "text": "Bonjour!"
+}
+
+<> 2022-12-08T102257.500.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "text": "Hello!"
+}
+
+<> 2022-12-08T102219.500.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "text": "Hello!"
+}
+
+<> 2022-12-08T102133.404.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "text": "Hello!"
+}
+
+<> 2022-12-08T102054.500.json
+
+###
+
+GET http://localhost:8080/ea077607-257e-4ac7-a1ed-8b6a8516b27c
+
+<> 2022-12-08T101322.200.json
+
+###
+
+GET http://localhost:8080
+
+<> 2022-12-08T100842.200.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "text": "Privet!"
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "text": "Bonjour!"
+}
+
+###
+
+GET http://localhost:8080
+
+<> 2022-12-08T100816.200.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "text": "Hello!"
+}
+
+###
+
+GET http://localhost:8080
+
+<> 2022-12-08T100638.200.json
+
+###
+
+GET http://localhost:8080
+
+<> 2022-12-08T100625.200.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "text": "Hello!"
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "text": "Hello!"
+}
+
+<> 2022-12-08T100305.404.json
+
+###
+
+GET http://localhost:8080
+
+<> 2022-12-08T100230.404.json
+
+###
+
+GET http://127.0.0.1:8080
+
+<> 2022-12-08T100229-2.404.json
+
+###
+
+GET http://127.0.0.1:8080
+
+<> 2022-12-08T100229-1.404.json
+
+###
+
+GET http://localhost:8080
+
+<> 2022-12-08T100229.404.json
+
+###
+
+GET http://127.0.0.1:8080
+
+<> 2022-12-08T100134-3.404.json
+
+###
+
+GET http://localhost:8080
+
+<> 2022-12-08T100134-2.404.json
+
+###
+
+GET http://127.0.0.1:8080
+
+<> 2022-12-08T100134-1.404.json
+
+###
+
+GET http://localhost:8080
+
+<> 2022-12-08T100134.404.json
+
+###
+
 GET http://127.0.0.1:8080
 
 <> 2022-12-02T165424-3.404.json
