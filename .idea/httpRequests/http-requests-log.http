@@ -1,3 +1,85 @@
+GET http://localhost:8080
+
+<> 2022-12-12T115945.200.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "sender": "Henk",
+  "receiver": "Ingrid",
+  "text": "Bonjour!",
+  "isMine": "true"
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "sender": "Henk",
+  "text": "Bonjour!"
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "sender": "Henk",
+  "text": "Bonjour!"
+}
+
+<> 2022-12-12T115228.500.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "sender": "Henk",
+  "text": "Bonjour!"
+}
+
+<> 2022-12-12T115048.500.json
+
+###
+
+GET http://localhost:8080
+
+<> 2022-12-12T114842.200.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "text": "Hello!"
+}
+
+###
+
+GET http://localhost:8080
+
+<> 2022-12-12T114637.200.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "text": "Hello!"
+}
+
+###
+
 POST http://localhost:8080
 Content-Type: application/json
 

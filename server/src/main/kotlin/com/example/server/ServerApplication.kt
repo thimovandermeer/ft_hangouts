@@ -15,18 +15,34 @@ import org.springframework.jdbc.core.query
 @Service
 class MessageService(val db: JdbcTemplate) {
 
-    fun findMessages(): List<Message> = db.query("select * from messages") { response, _ ->
-        Message(response.getString("id"), response.getString("text"))
+    fun findMessages(): List<Message> = db.query("select * from messages_full") { response, _ ->
+        Message(
+            response.getString("id"),
+            response.getString("sender"),
+            response.getString("receiver"),
+            response.getString("text"),
+            response.getString("isMine")
+        )
     }
 
-    fun findMessageById(id: String): List<Message> = db.query("select * from messages where id = ?", id) { response, _ ->
-        Message(response.getString("id"), response.getString("text"))
+    fun findMessageById(id: String): List<Message> = db.query("select * from messages_full where id = ?", id) { response, _ ->
+        Message(
+            response.getString("id"),
+            response.getString("sender"),
+            response.getString("receiver"),
+            response.getString("text"),
+            response.getString("isMine")
+        )
     }
 
     fun save(message: Message) {
         val id = message.id ?: UUID.randomUUID().toString()
-        db.update("insert into messages values ( ?, ? )",
-            id, message.text)
+        db.update("insert into messages_full values ( ?, ?, ?, ?,? )",
+            id,
+            message.sender,
+            message.receiver,
+            message.text,
+            message.isMine)
     }
 }
 
@@ -54,5 +70,4 @@ class MessageController(val service: MessageService) {
 }
 
 
-@Table("MESSAGES")
-data class Message(@Id var id: String?, val text: String)
+data class Message(@Id var id: String?, val sender: String, val receiver: String, val text: String, val isMine: String)

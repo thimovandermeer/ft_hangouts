@@ -1,4 +1,7 @@
-CREATE TABLE IF NOT EXISTS messages (
-    id                     VARCHAR(60)  DEFAULT RANDOM_UUID() PRIMARY KEY,
-    text                   VARCHAR      NOT NULL
+CREATE TABLE IF NOT EXISTS messages_full (
+    id          VARCHAR(60)  PRIMARY KEY,
+    sender      VARCHAR      NOT NULL,
+    receiver    VARCHAR      NOT NULL,
+    text        VARCHAR      NOT NULL,
+    isMine      VARCHAR      NOT NULL
     );
