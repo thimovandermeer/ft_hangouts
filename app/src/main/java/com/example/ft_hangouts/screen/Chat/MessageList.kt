@@ -23,7 +23,7 @@ fun MessageList(
 
 ) {
 
-    val messages = viewModel.messages.value!!
+    val messages = viewModel.messages.value
     Log.d("MessageList", "Messages ${messages}")
     Box(
         modifier = modifier,
@@ -41,8 +41,10 @@ fun MessageList(
             modifier = Modifier.fillMaxSize(),
             reverseLayout = true, // 5
         ) {
-            items(messages){ message ->
-                MessageCard(message) // 6
+            if (messages != null) {
+                items(messages){ message ->
+                    MessageCard(message) // 6
+                }
             }
         }
     }

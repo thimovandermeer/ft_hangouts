@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*
 import java.util.*
 
 import org.springframework.data.annotation.Id
-import org.springframework.data.relational.core.mapping.Table
 
 import org.springframework.jdbc.core.query
 
@@ -36,7 +35,8 @@ class MessageService(val db: JdbcTemplate) {
     }
 
     fun save(message: Message) {
-        val id = message.id ?: UUID.randomUUID().toString()
+        val id = message.messageId ?: UUID.randomUUID().toString()
+
         db.update("insert into messages_full values ( ?, ?, ?, ?,? )",
             id,
             message.sender,
@@ -56,7 +56,7 @@ fun main(args: Array<String>) {
 
 @RestController
 class MessageController(val service: MessageService) {
-    @GetMapping("/")
+    @GetMapping("/messages")
     fun index(): List<Message> = service.findMessages()
 
     @GetMapping("/{id}")
@@ -70,4 +70,4 @@ class MessageController(val service: MessageService) {
 }
 
 
-data class Message(@Id var id: String?, val sender: String, val receiver: String, val text: String, val isMine: String)
+data class Message(@Id var messageId: String?, val sender: String, val receiver: String, val text: String, val isMine: String)

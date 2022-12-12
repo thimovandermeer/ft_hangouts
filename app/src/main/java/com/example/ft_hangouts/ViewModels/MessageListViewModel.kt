@@ -36,6 +36,7 @@ class MessageListViewModel @Inject constructor(
             _status.value = MessagesApiStatus.LOADING
             try {
                 _messages.value = MessageApi.retrofitService.getMessage()
+                Log.d(TAG, "Wat krijgen we binnen ${MessageApi.retrofitService.getMessage()}")
                 _status.value = MessagesApiStatus.DONE
             } catch (e: java.lang.Exception) {
                 Log.d(TAG, "exception with reason ${e.message}")
