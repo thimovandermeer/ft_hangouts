@@ -125,6 +125,338 @@ POST http://localhost:8080
 Content-Type: application/json
 
 {
+  "sender": "Henk",
+  "receiver": "Ingrid",
+  "text": "Bonjour!",
+  "mine": "false"
+}
+
+<> 2022-12-09T143102.500.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "sender": "Henk",
+  "receiver": "Ingrid",
+  "text": "Bonjour!",
+  "mine": "false"
+}
+
+<> 2022-12-09T141801.500.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "sender": "Henk",
+  "receiver": "Ingrid",
+  "text": "Bonjour!",
+  "mine": "false"
+}
+
+<> 2022-12-09T141455.500.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "sender": "Henk",
+  "receiver": "Ingrid",
+  "text": "Bonjour!",
+  "isMine": "false"
+}
+
+<> 2022-12-09T141155.500.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "sender": "Henk",
+  "receiver": "Ingrid",
+  "text": "Bonjour!",
+  "isMine": false
+}
+
+<> 2022-12-09T141042.500.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "sender": "Henk",
+  "receiver": "Ingrid",
+  "text": "Bonjour!",
+  "isMine": "False"
+}
+
+<> 2022-12-09T140943.500.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "id": "12345",
+  "sender": "Henk",
+  "receiver": "Ingrid",
+  "text": "Bonjour!",
+  "isMine": "false"
+}
+
+<> 2022-12-09T140425.500.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "sender": "Henk",
+  "receiver": "Ingrid",
+  "text": "Bonjour!",
+  "isMine": "false"
+}
+
+<> 2022-12-09T140334.500.json
+
+###
+
+GET http://localhost:8080/messages
+
+<> 2022-12-09T140200.500.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "sender": "Henk",
+  "receiver": "Ingrid",
+  "text": "Bonjour!",
+  "isMine": "false"
+}
+
+<> 2022-12-09T140155.500.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "sender": "Henk",
+  "receiver": "Ingrid",
+  "text": "Bonjour!",
+  "isMine": "False"
+}
+
+<> 2022-12-09T140034.500.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "sender": "Henk",
+  "receiver": "Ingrid",
+  "text": "Bonjour!",
+  "isMine": "False"
+}
+
+<> 2022-12-09T134438.500.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "sender": "Henk",
+  "receiver": "Ingrid",
+  "text": "Bonjour!",
+  "isMine": "False"
+}
+
+<> 2022-12-09T134205.500.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "sender": "Henk",
+  "receiver": "Ingrid",
+  "text": "Bonjour!",
+  "isMine": "False"
+}
+
+<> 2022-12-09T134057.500.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "sender": "Henk",
+  "receiver": "Ingrid",
+  "text": "Bonjour!",
+  "isMine": "False"
+}
+
+<> 2022-12-09T134005.500.json
+
+###
+
+GET http://localhost:8080/messages
+
+<> 2022-12-09T110931.500.json
+
+###
+
+GET http://localhost:8080/messages
+
+<> 2022-12-09T110834.200.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "sender": "Henk",
+  "receiver": "Ingrid",
+  "text": "Bonjour!",
+  "isMine": "False"
+}
+
+###
+
+GET http://localhost:8080/messages
+
+<> 2022-12-09T110700.200.json
+
+###
+
+GET http://localhost:8080/ea077607-257e-4ac7-a1ed-8b6a8516b27c
+
+<> 2022-12-09T110436.200.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "sender": "Henk",
+  "receiver": "Ingrid",
+  "text": "Bonjour!",
+  "isMine": "False"
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "sender": "Henk",
+  "receiver": "Ingrid",
+  "text": "Bonjour!",
+  "isMine": "False"
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "sender": "Henk",
+  "receiver": "Ingrid",
+  "text": "Bonjour!",
+  "isMine": "False"
+}
+
+###
+
+GET http://localhost:8080/messages
+
+<> 2022-12-09T110250.200.json
+
+###
+
+GET http://localhost:8080/messages
+
+<> 2022-12-09T110219.200.json
+
+###
+
+GET http://localhost:8080/messages
+
+<> 2022-12-09T110213.200.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "sender": "Henk",
+  "receiver": "Ingrid",
+  "text": "Bonjour!",
+  "isMine": "False"
+}
+
+###
+
+GET http://localhost:8080/messages
+
+<> 2022-12-09T103714.200.json
+
+###
+
+GET http://localhost:8080
+
+<> 2022-12-09T103340.200.json
+
+###
+
+GET http://localhost:8080
+
+<> 2022-12-08T105829.200.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "text": "Bonjour!"
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
   "text": "Hello!"
 }
 
@@ -307,143 +639,6 @@ Content-Type: application/json
 {
   "text": "Bonjour!"
 }
-
-###
-
-GET http://localhost:8080
-
-<> 2022-12-08T100816.200.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "text": "Hello!"
-}
-
-###
-
-GET http://localhost:8080
-
-<> 2022-12-08T100638.200.json
-
-###
-
-GET http://localhost:8080
-
-<> 2022-12-08T100625.200.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "text": "Hello!"
-}
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "text": "Hello!"
-}
-
-<> 2022-12-08T100305.404.json
-
-###
-
-GET http://localhost:8080
-
-<> 2022-12-08T100230.404.json
-
-###
-
-GET http://127.0.0.1:8080
-
-<> 2022-12-08T100229-2.404.json
-
-###
-
-GET http://127.0.0.1:8080
-
-<> 2022-12-08T100229-1.404.json
-
-###
-
-GET http://localhost:8080
-
-<> 2022-12-08T100229.404.json
-
-###
-
-GET http://127.0.0.1:8080
-
-<> 2022-12-08T100134-3.404.json
-
-###
-
-GET http://localhost:8080
-
-<> 2022-12-08T100134-2.404.json
-
-###
-
-GET http://127.0.0.1:8080
-
-<> 2022-12-08T100134-1.404.json
-
-###
-
-GET http://localhost:8080
-
-<> 2022-12-08T100134.404.json
-
-###
-
-GET http://127.0.0.1:8080
-
-<> 2022-12-02T165424-3.404.json
-
-###
-
-GET http://127.0.0.1:8080
-
-<> 2022-12-02T165424-2.404.json
-
-###
-
-GET http://localhost:8080
-
-<> 2022-12-02T165424-1.404.json
-
-###
-
-GET http://localhost:8080
-
-<> 2022-12-02T165424.404.json
-
-###
-
-GET http://localhost:8080
-
-<> 2022-12-02T165310.404.json
-
-###
-
-GET http://127.0.0.1:8080
-
-<> 2022-12-02T165255.404.json
-
-###
-
-GET http://localhost:8080
-
-<> 2022-12-02T165220.404.json
 
 ###
 

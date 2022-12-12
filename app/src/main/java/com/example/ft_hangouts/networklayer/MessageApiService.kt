@@ -1,12 +1,13 @@
 package com.example.ft_hangouts.networklayer
 
+import com.example.ft_hangouts.repositories.Chat.Message
 import retrofit2.Retrofit
 import retrofit2.converter.scalars.ScalarsConverterFactory
 import retrofit2.http.GET
 
 
 private const val BASE_URL =
-    "https://android-kotlin-fun-mars-server.appspot.com"
+    "http://localhost:8080/"
 private val retrofit = Retrofit.Builder()
     .addConverterFactory(ScalarsConverterFactory.create())
     .baseUrl(BASE_URL)
@@ -19,7 +20,7 @@ object MessageApi {
 }
 interface MessageApiService {
     @GET("messages")
-    suspend fun getMessage() : String
+    suspend fun getMessage() : List<Message>
 
 }
 
