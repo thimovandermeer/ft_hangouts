@@ -14,8 +14,6 @@ enum class MessagesApiStatus {LOADING, ERROR, DONE}
 
 @HiltViewModel
 class MessageListViewModel @Inject constructor(
-    private val MessageRepository: MessageRepository,
-    private val savedStateHandle: SavedStateHandle
 ) : ViewModel(){
     val TAG = "MessageListViewModel"
     private val _status = MutableLiveData<MessagesApiStatus>()

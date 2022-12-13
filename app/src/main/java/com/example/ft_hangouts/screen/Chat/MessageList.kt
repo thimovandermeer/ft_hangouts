@@ -19,7 +19,7 @@ fun MessageList(
     navController: NavController,
     uuid: String?,
     modifier: Modifier = Modifier,
-    viewModel: MessageListViewModel
+    viewModel: MessageListViewModel,
 
 ) {
     viewModel.channelID.value = uuid
