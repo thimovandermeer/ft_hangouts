@@ -23,6 +23,8 @@ fun MessageListScreen(navController: NavController, uuid: String?, viewModel: Me
             uuid = uuid,
             viewModel = viewModel
         )
-        MessageInput()
+        MessageInput(
+            uuid = uuid
+        )
     }
 }

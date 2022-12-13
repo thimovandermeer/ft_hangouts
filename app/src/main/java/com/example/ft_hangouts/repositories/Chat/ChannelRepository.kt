@@ -8,5 +8,6 @@ data class Chats(
 
 interface ChannelRepository {
     fun getChats() : List<Chats>
+    fun addChat()
 
 }

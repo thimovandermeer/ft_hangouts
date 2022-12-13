@@ -15,4 +15,8 @@ class ChannelListViewModel @Inject constructor(
     fun getChannels() : List<Chats> {
         return ChannelRepository.getChats()
     }
+
+    fun addChat() {
+        return ChannelRepository.addChat()
+    }
 }

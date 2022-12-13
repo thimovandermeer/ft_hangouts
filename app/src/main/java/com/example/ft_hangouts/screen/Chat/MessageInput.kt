@@ -20,8 +20,10 @@ import com.example.ft_hangouts.ViewModels.MessageInputViewModel
 
 @Composable
 fun MessageInput(
+    uuid: String?,
     messageInputViewModel: MessageInputViewModel = hiltViewModel(), // 1
 ) {
+    messageInputViewModel.channelID.value = uuid
     var inputValue by remember { mutableStateOf("") } // 2
 
     fun sendMessage() { // 3

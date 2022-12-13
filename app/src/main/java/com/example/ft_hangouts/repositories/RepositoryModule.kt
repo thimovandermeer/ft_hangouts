@@ -1,9 +1,6 @@
 package com.example.ft_hangouts.repositories
 
-import com.example.ft_hangouts.repositories.Chat.ChannelRepository
-import com.example.ft_hangouts.repositories.Chat.ChannelRepositoryImpl
-import com.example.ft_hangouts.repositories.Chat.MessageRepository
-import com.example.ft_hangouts.repositories.Chat.MessageRepositoryImpl
+import com.example.ft_hangouts.repositories.Chat.*
 import com.example.ft_hangouts.repositories.User.UserRepository
 import com.example.ft_hangouts.repositories.User.UserRepositoryImpl
 import dagger.Binds
@@ -22,5 +19,8 @@ abstract class RepositoryModule {
 
     @Binds
     abstract fun providesMessageRepository(impl: MessageRepositoryImpl) : MessageRepository
+
+    @Binds
+    abstract fun providesMessageInputRepository(impl: MessageInputRepositoryImpl) : MessageInputRepository
 
 }

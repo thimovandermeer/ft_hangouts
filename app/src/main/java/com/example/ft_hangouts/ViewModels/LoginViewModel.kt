@@ -1,6 +1,7 @@
 package com.example.ft_hangouts.ViewModels
 
 import androidx.lifecycle.ViewModel
+import com.example.ft_hangouts.MainActivity
 import com.example.ft_hangouts.User
 import com.example.ft_hangouts.repositories.User.UserRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -18,6 +19,7 @@ class LoginViewModel  @Inject constructor(
         val user = getLocalList(username)
         return if (user != null) {
             if (user.password == password) {
+                MainActivity.username = username
                 LoginState.REDIRECT
             } else {
                 LoginState.PASSWORDINCORRECT

@@ -24,4 +24,8 @@ class ChannelRepositoryImpl @Inject constructor(
     override fun getChats() : List<Chats> {
         return _chatsList
     }
+
+    override fun addChat() {
+        TODO("Not yet implemented")
+    }
 }
