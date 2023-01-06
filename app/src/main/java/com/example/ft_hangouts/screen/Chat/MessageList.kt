@@ -24,7 +24,7 @@ fun MessageList(
 ) {
     viewModel.channelID.value = uuid
     if(viewModel.channelID.value != null && !viewModel.loaded) {
-        viewModel.getMessagesFromApi()
+        viewModel.getMessages()
     }
     val messages = viewModel.messages.value
     Log.d("MessageList", "Messages ${messages}")

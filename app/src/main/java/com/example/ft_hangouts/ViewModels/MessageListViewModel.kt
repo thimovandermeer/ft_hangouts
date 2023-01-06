@@ -2,8 +2,8 @@ package com.example.ft_hangouts.ViewModels
 
 import android.util.Log
 import androidx.lifecycle.*
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.ft_hangouts.networklayer.MessageApi
+import com.example.ft_hangouts.repositories.Chat.ChannelRepository
 import com.example.ft_hangouts.repositories.Chat.Message
 import com.example.ft_hangouts.repositories.Chat.MessageRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -14,6 +14,7 @@ enum class MessagesApiStatus {LOADING, ERROR, DONE}
 
 @HiltViewModel
 class MessageListViewModel @Inject constructor(
+    private val MessageRepository: MessageRepository
 ) : ViewModel(){
     val TAG = "MessageListViewModel"
     private val _status = MutableLiveData<MessagesApiStatus>()
@@ -25,11 +26,11 @@ class MessageListViewModel @Inject constructor(
     var loaded : Boolean = false
 
     // dit moet naar de repository impl
-    fun getMessagesFromApi() {
+    fun getMessages() {
         viewModelScope.launch {
             _status.value = MessagesApiStatus.LOADING
             try {
-                _messages.value = MessageApi.retrofitService.getChannelMessages(channelID.value.toString())
+                _messages.value = MessageRepository.getMessages(channelID.value.toString())
                 _status.value = MessagesApiStatus.DONE
                 loaded = true
             } catch (e: java.lang.Exception) {
