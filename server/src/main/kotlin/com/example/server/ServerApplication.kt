@@ -12,6 +12,7 @@ import org.springframework.data.annotation.Id
 @Service
 class MessageService() {
     var _messages: MutableList<Message> = mutableListOf()
+    var _channels: MutableList<Chats> = mutableListOf()
     fun findMessages(): List<Message> {
         println("All messages in return functin= ${_messages}")
         return _messages
@@ -28,6 +29,18 @@ class MessageService() {
         val id = message.messageId ?: UUID.randomUUID().toString()
         message.messageId = id
         _messages.add(message)
+    }
+
+    fun findChannels(): MutableList<Chats> {
+        return _channels
+    }
+
+    fun saveChannel(newChannelName : Chats) {
+        println("Channel = ${newChannelName}")
+        println("Is dit wel wat ik wil: ${newChannelName.channelName}")
+        // create a check if something already exists
+        var newChat = Chats(UUID.randomUUID().toString(), newChannelName.channelName)
+        _channels.add(newChat)
     }
 
 }
@@ -52,7 +65,18 @@ class MessageService() {
         fun post(@RequestBody message: Message) {
             service.save(message)
         }
+
+        @GetMapping("/channels")
+        fun indexChannels() : MutableList<Chats> =
+            service.findChannels()
+
+        @PostMapping("/channels")
+        fun postChannel(@RequestBody channelName: Chats) {
+            service.saveChannel(channelName)
+        }
     }
 
 
+
 data class Message(@Id var messageId: String?, var channelID: String, val sender: String, val receiver: String, val isMine: Boolean, val text: String)
+data class Chats(@Id var channelID: String, var channelName: String)

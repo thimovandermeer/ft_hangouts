@@ -23,6 +23,8 @@ class MessageListViewModel @Inject constructor(
     val messages: LiveData<List<Message>> = _messages
     var channelID = MutableLiveData<String>()
     var loaded : Boolean = false
+
+    // dit moet naar de repository impl
     fun getMessagesFromApi() {
         viewModelScope.launch {
             _status.value = MessagesApiStatus.LOADING
@@ -37,6 +39,7 @@ class MessageListViewModel @Inject constructor(
             }
         }
     }
+
 //    Log.d(TAG, "Entering Message List View Model")
 
 }

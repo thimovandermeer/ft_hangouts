@@ -1,5 +1,6 @@
 package com.example.ft_hangouts.screen.Chat
 
+import android.util.Log
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
@@ -13,16 +14,33 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.ViewModel
 import androidx.navigation.NavHostController
-import kotlinx.coroutines.Dispatchers
+import com.example.ft_hangouts.Routes
+import com.example.ft_hangouts.ViewModels.AddChannelApiStatus
+import com.example.ft_hangouts.ViewModels.AddChannelViewModel
+import com.example.ft_hangouts.ViewModels.ChannelListViewModel
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 @Composable
-fun AddChannel(navController: NavHostController) {
+fun AddChannel(
+    navController: NavHostController,
+    viewmodel: AddChannelViewModel = hiltViewModel(),
+) {
     val coroutineScope = rememberCoroutineScope()
     val channelname = remember { mutableStateOf(TextFieldValue()) }
+    val state : MutableState<AddChannelApiStatus> = remember {mutableStateOf(AddChannelApiStatus.INPROGRESS)}
+    val TAG = "add channel"
     Box(modifier = Modifier.fillMaxSize()) {
+        if (state.value == AddChannelApiStatus.DONE) {
+            Log.d("Add channel view", "channelstate is done")
+            navController.navigate(Routes.Chat.route)
+            state.value = AddChannelApiStatus.INPROGRESS
+        } else if (state.value == AddChannelApiStatus.ERROR) {
+            Log.d("Add channel view", "channelstate is done")
+            Text(text = "Channel already exists")
+        }
         Column(
             modifier = Modifier.padding(20.dp),
             verticalArrangement = Arrangement.Center,
@@ -43,9 +61,8 @@ fun AddChannel(navController: NavHostController) {
                 Button(
                     onClick = {
                         coroutineScope.launch {
-                            withContext(Dispatchers.IO) {
-                                // zo implementeren
-                            }
+                                state.value = viewmodel.addChat(channelname.value.text)
+                                Log.d(TAG, "state value = ${state.value}")
                         }
                     },
                     shape = RoundedCornerShape(50.dp),

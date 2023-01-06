@@ -30,7 +30,7 @@ fun ChannelListItem(
     ) {
         Column(modifier = Modifier.padding(start = 8.dp)) { // 3
             Text(
-                text = chats.Name.toString(),
+                text = chats.channelName.toString(),
                 style = TextStyle(fontWeight = FontWeight.Bold),
                 fontSize = 18.sp,
             )

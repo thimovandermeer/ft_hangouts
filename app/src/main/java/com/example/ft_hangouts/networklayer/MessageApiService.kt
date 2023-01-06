@@ -1,14 +1,13 @@
 package com.example.ft_hangouts.networklayer
 
+import android.util.Log
+import com.example.ft_hangouts.repositories.Chat.Chats
 import com.example.ft_hangouts.repositories.Chat.Message
 import retrofit2.Retrofit
-import retrofit2.http.GET
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
-import retrofit2.http.POST
-import retrofit2.http.Path
-import retrofit2.http.Url
+import retrofit2.http.*
 
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
@@ -35,5 +34,19 @@ interface MessageApiService {
 
     @POST("/{id}")
     suspend fun sendMessage(@Path("id") channelID: String, message: Message)
+}
+
+object ChannelApi {
+    val retrofitService: ChannelApiService by lazy {
+        Log.d("CHANNEL API", "Test")
+        retrofit.create(ChannelApiService::class.java)
+    }
+}
+interface ChannelApiService {
+    @GET("channels")
+    suspend fun getChannels() : List<Chats>
+
+    @POST("channels")
+    suspend fun CreateChannel(@Body newChatName: Chats)
 }
 

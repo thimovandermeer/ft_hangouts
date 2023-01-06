@@ -1,6 +1,13 @@
-GET http://localhost:8080
+POST http://localhost:8080
+Content-Type: application/json
 
-<> 2022-12-12T115945.200.json
+{
+  "channelID": "1",
+  "sender": "Peter",
+  "receiver": "Dave",
+  "text": "doei doei doei",
+  "isMine": false
+}
 
 ###
 
@@ -8,637 +15,497 @@ POST http://localhost:8080
 Content-Type: application/json
 
 {
-  "sender": "Henk",
-  "receiver": "Ingrid",
-  "text": "Bonjour!",
+  "channelID": "1",
+  "sender": "Peter",
+  "receiver": "Dave",
+  "text": "doei doei doei",
+  "isMine": false
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "channelID": "1",
+  "sender": "Peter",
+  "receiver": "Dave",
+  "text": "doei doei doei",
+  "isMine": false
+}
+
+###
+
+GET http://localhost:8080/messages/1
+
+<> 2022-12-13T105707.404.json
+
+###
+
+GET http://localhost:8080/1
+
+<> 2022-12-13T104555.200.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "channelID": "1",
+  "sender": "Peter",
+  "receiver": "Dave",
+  "text": "doei doei doei",
+  "isMine": false
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "channelID": "1",
+  "sender": "Peter",
+  "receiver": "Dave",
+  "text": "doei doei doei",
+  "isMine": false
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "channelID": "1",
+  "sender": "Peter",
+  "receiver": "Dave",
+  "text": "doei doei doei",
+  "isMine": true
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "channelID": "1",
+  "sender": "Peter",
+  "receiver": "Dave",
+  "text": "doei doei doei",
+  "isMine": true
+}
+
+###
+
+GET http://localhost:8080/1
+
+<> 2022-12-13T103801.200.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "channelID": "1",
+  "sender": "Peter",
+  "receiver": "Dave",
+  "text": "doei doei doei",
+  "isMine": true
+}
+
+###
+
+GET http://localhost:8080/eaf
+
+<> 2022-12-13T103751.200.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "channelID": "eaf",
+  "sender": "Peter",
+  "receiver": "Dave",
+  "text": "doei doei doei",
+  "isMine": true
+}
+
+###
+
+GET http://localhost:8080/ea077607-257e-4ac7-a1ed-8b6a8516b27c
+
+<> 2022-12-13T103708.500.json
+
+###
+
+GET http://localhost:8080/eaf
+
+<> 2022-12-13T103656.500.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "channelID": "eaf",
+  "sender": "Peter",
+  "receiver": "Dave",
+  "text": "doei doei doei",
+  "isMine": true
+}
+
+###
+
+GET http://localhost:8080/1
+
+<> 2022-12-13T103619.500.json
+
+###
+
+GET http://localhost:8080/messages
+
+<> 2022-12-13T103338.200.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "channelID": "1",
+  "sender": "Peter",
+  "receiver": "Dave",
+  "text": "doei doei doei",
+  "isMine": true
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "channelID": "1",
+  "sender": "Peter",
+  "receiver": "Dave",
+  "text": "doei doei doei",
+  "isMine": true
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "channelID": "1",
+  "sender": "Peter",
+  "receiver": "Dave",
+  "text": "doei doei doei",
+  "isMine": true
+}
+
+###
+
+GET http://localhost:8080/messages
+
+<> 2022-12-13T103202.200.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "channelID": "1",
+  "sender": "Peter",
+  "receiver": "Dave",
+  "text": "doei doei doei",
+  "isMine": "false"
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "channelID": "1",
+  "sender": "Peter",
+  "receiver": "Dave",
+  "text": "doei doei doei",
+  "isMine": "false"
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "channelID": "1",
+  "sender": "Peter",
+  "receiver": "Dave",
+  "text": "doei doei doei",
+  "isMine": "false"
+}
+
+###
+
+GET http://localhost:8080/messages
+
+<> 2022-12-13T103027.200.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "channelID": "1",
+  "sender": "Peter",
+  "receiver": "Dave",
+  "text": "doei doei doei",
+  "isMine": "false"
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "channelID": "1",
+  "sender": "Peter",
+  "receiver": "Dave",
+  "text": "doei doei doei",
+  "isMine": "false"
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "channelID": "1",
+  "sender": "Peter",
+  "receiver": "Dave",
+  "text": "doei doei doei",
+  "isMine": "false"
+}
+
+###
+
+GET http://localhost:8080/messages
+
+<> 2022-12-13T102919.200.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "channelID": "1",
+  "sender": "Peter",
+  "receiver": "Dave",
+  "text": "doei doei doei",
+  "isMine": "false"
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "channelID": "1",
+  "sender": "Peter",
+  "receiver": "Dave",
+  "text": "doei doei doei",
+  "isMine": "false"
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "channelID": "1",
+  "sender": "Peter",
+  "receiver": "Dave",
+  "text": "doei doei doei",
+  "isMine": "false"
+}
+
+###
+
+GET http://localhost:8080/messages
+
+<> 2022-12-13T102645.200.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "channelID": "1",
+  "sender": "Peter",
+  "receiver": "Dave",
+  "text": "doei doei doei",
+  "isMine": "false"
+}
+
+###
+
+GET http://localhost:8080/ea077607-257e-4ac7-a1ed-8b6a8516b27c
+
+<> 2022-12-13T101740.500.json
+
+###
+
+GET http://localhost:8080/messages
+
+<> 2022-12-13T101720.200.json
+
+###
+
+GET http://localhost:8080/1
+
+<> 2022-12-13T101602.500.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "channelID": "1",
+  "sender": "Peter",
+  "receiver": "Dave",
+  "text": "doei doei doei",
+  "isMine": "false"
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "channelID": "1",
+  "sender": "Peter",
+  "receiver": "Dave",
+  "text": "dahaaaaaaag",
+  "isMine": "false"
+}
+
+###
+
+GET http://localhost:8080/messages
+
+<> 2022-12-12T144949.200.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "sender": "Peter",
+  "receiver": "Dave",
+  "text": "dahaaaaaaag",
+  "isMine": "false"
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "sender": "Peter",
+  "receiver": "Dave",
+  "text": "dahaaaaaaag",
+  "isMine": "false"
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "sender": "Peter",
+  "receiver": "Dave",
+  "text": "dahaaaaaaag",
+  "isMine": "false"
+}
+
+###
+
+GET http://localhost:8080/messages
+
+<> 2022-12-12T143705.200.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "sender": "Peter",
+  "receiver": "Dave",
+  "text": "dahaaaaaaag",
+  "isMine": "false"
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "sender": "Peter",
+  "receiver": "Dave",
+  "text": "dahaaaaaaag",
+  "isMine": "false"
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "sender": "Peter",
+  "receiver": "Dave",
+  "text": "dahaaaaaaag",
   "isMine": "true"
 }
 
 ###
 
-POST http://localhost:8080
-Content-Type: application/json
+GET http://localhost:8080/messages
 
-{
-  "sender": "Henk",
-  "text": "Bonjour!"
-}
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "sender": "Henk",
-  "text": "Bonjour!"
-}
-
-<> 2022-12-12T115228.500.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "sender": "Henk",
-  "text": "Bonjour!"
-}
-
-<> 2022-12-12T115048.500.json
-
-###
-
-GET http://localhost:8080
-
-<> 2022-12-12T114842.200.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "text": "Hello!"
-}
-
-###
-
-GET http://localhost:8080
-
-<> 2022-12-12T114637.200.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "text": "Hello!"
-}
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "text": "Hello!"
-}
-
-<> 2022-12-09T151632.500.json
-
-###
-
-GET http://localhost:8080
-
-<> 2022-12-09T151415.200.json
+<> 2022-12-12T142418.200.json
 
 ###
 
 GET http://localhost:8080/messages
 
-<> 2022-12-09T151353.200.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "text": "Hello!"
-}
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "text": "Hello!"
-}
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "sender": "Henk",
-  "receiver": "Ingrid",
-  "text": "Bonjour!",
-  "mine": "false"
-}
-
-<> 2022-12-09T143102.500.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "sender": "Henk",
-  "receiver": "Ingrid",
-  "text": "Bonjour!",
-  "mine": "false"
-}
-
-<> 2022-12-09T141801.500.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "sender": "Henk",
-  "receiver": "Ingrid",
-  "text": "Bonjour!",
-  "mine": "false"
-}
-
-<> 2022-12-09T141455.500.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "sender": "Henk",
-  "receiver": "Ingrid",
-  "text": "Bonjour!",
-  "isMine": "false"
-}
-
-<> 2022-12-09T141155.500.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "sender": "Henk",
-  "receiver": "Ingrid",
-  "text": "Bonjour!",
-  "isMine": false
-}
-
-<> 2022-12-09T141042.500.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "sender": "Henk",
-  "receiver": "Ingrid",
-  "text": "Bonjour!",
-  "isMine": "False"
-}
-
-<> 2022-12-09T140943.500.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "id": "12345",
-  "sender": "Henk",
-  "receiver": "Ingrid",
-  "text": "Bonjour!",
-  "isMine": "false"
-}
-
-<> 2022-12-09T140425.500.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "sender": "Henk",
-  "receiver": "Ingrid",
-  "text": "Bonjour!",
-  "isMine": "false"
-}
-
-<> 2022-12-09T140334.500.json
-
-###
-
-GET http://localhost:8080/messages
-
-<> 2022-12-09T140200.500.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "sender": "Henk",
-  "receiver": "Ingrid",
-  "text": "Bonjour!",
-  "isMine": "false"
-}
-
-<> 2022-12-09T140155.500.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "sender": "Henk",
-  "receiver": "Ingrid",
-  "text": "Bonjour!",
-  "isMine": "False"
-}
-
-<> 2022-12-09T140034.500.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "sender": "Henk",
-  "receiver": "Ingrid",
-  "text": "Bonjour!",
-  "isMine": "False"
-}
-
-<> 2022-12-09T134438.500.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "sender": "Henk",
-  "receiver": "Ingrid",
-  "text": "Bonjour!",
-  "isMine": "False"
-}
-
-<> 2022-12-09T134205.500.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "sender": "Henk",
-  "receiver": "Ingrid",
-  "text": "Bonjour!",
-  "isMine": "False"
-}
-
-<> 2022-12-09T134057.500.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "sender": "Henk",
-  "receiver": "Ingrid",
-  "text": "Bonjour!",
-  "isMine": "False"
-}
-
-<> 2022-12-09T134005.500.json
-
-###
-
-GET http://localhost:8080/messages
-
-<> 2022-12-09T110931.500.json
-
-###
-
-GET http://localhost:8080/messages
-
-<> 2022-12-09T110834.200.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "sender": "Henk",
-  "receiver": "Ingrid",
-  "text": "Bonjour!",
-  "isMine": "False"
-}
-
-###
-
-GET http://localhost:8080/messages
-
-<> 2022-12-09T110700.200.json
-
-###
-
-GET http://localhost:8080/ea077607-257e-4ac7-a1ed-8b6a8516b27c
-
-<> 2022-12-09T110436.200.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "sender": "Henk",
-  "receiver": "Ingrid",
-  "text": "Bonjour!",
-  "isMine": "False"
-}
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "sender": "Henk",
-  "receiver": "Ingrid",
-  "text": "Bonjour!",
-  "isMine": "False"
-}
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "sender": "Henk",
-  "receiver": "Ingrid",
-  "text": "Bonjour!",
-  "isMine": "False"
-}
-
-###
-
-GET http://localhost:8080/messages
-
-<> 2022-12-09T110250.200.json
-
-###
-
-GET http://localhost:8080/messages
-
-<> 2022-12-09T110219.200.json
-
-###
-
-GET http://localhost:8080/messages
-
-<> 2022-12-09T110213.200.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "sender": "Henk",
-  "receiver": "Ingrid",
-  "text": "Bonjour!",
-  "isMine": "False"
-}
-
-###
-
-GET http://localhost:8080/messages
-
-<> 2022-12-09T103714.200.json
-
-###
-
-GET http://localhost:8080
-
-<> 2022-12-09T103340.200.json
-
-###
-
-GET http://localhost:8080
-
-<> 2022-12-08T105829.200.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "text": "Bonjour!"
-}
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "text": "Hello!"
-}
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "text": "Bonjour!"
-}
-
-<> 2022-12-08T104022.500.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "text": "Bonjour!"
-}
-
-<> 2022-12-08T103740.500.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "text": "Bonjour!"
-}
-
-<> 2022-12-08T103623.500.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "text": "Bonjour!",
-  "ID": "101010"
-}
-
-<> 2022-12-08T103413.500.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "text": "Bonjour!"
-}
-
-<> 2022-12-08T102609.500.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "text": "Bonjour!"
-}
-
-<> 2022-12-08T102340.500.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "text": "Bonjour!"
-}
-
-<> 2022-12-08T102336.500.json
-
-###
-
-GET http://localhost:8080
-
-<> 2022-12-08T102306.200.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "text": "Privet!"
-}
-
-<> 2022-12-08T102302.500.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "text": "Privet!"
-}
-
-<> 2022-12-08T102259.500.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "text": "Bonjour!"
-}
-
-<> 2022-12-08T102257.500.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "text": "Hello!"
-}
-
-<> 2022-12-08T102219.500.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "text": "Hello!"
-}
-
-<> 2022-12-08T102133.404.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "text": "Hello!"
-}
-
-<> 2022-12-08T102054.500.json
-
-###
-
-GET http://localhost:8080/ea077607-257e-4ac7-a1ed-8b6a8516b27c
-
-<> 2022-12-08T101322.200.json
-
-###
-
-GET http://localhost:8080
-
-<> 2022-12-08T100842.200.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "text": "Privet!"
-}
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-  "text": "Bonjour!"
-}
+<> 2022-12-12T142340.200.json
 
 ###
 

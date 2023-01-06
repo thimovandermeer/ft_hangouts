@@ -30,7 +30,6 @@ fun MessageInput(
         messageInputViewModel.sendMessage(inputValue)
         inputValue = ""
     }
-
     Row {
         TextField( // 4
             modifier = Modifier.weight(1f),
