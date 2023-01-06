@@ -15,12 +15,10 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.lifecycle.ViewModel
 import androidx.navigation.NavHostController
 import com.example.ft_hangouts.Routes
 import com.example.ft_hangouts.ViewModels.AddChannelApiStatus
 import com.example.ft_hangouts.ViewModels.AddChannelViewModel
-import com.example.ft_hangouts.ViewModels.ChannelListViewModel
 import kotlinx.coroutines.launch
 
 @Composable
@@ -29,7 +27,7 @@ fun AddChannel(
     viewmodel: AddChannelViewModel = hiltViewModel(),
 ) {
     val coroutineScope = rememberCoroutineScope()
-    val channelname = remember { mutableStateOf(TextFieldValue()) }
+    val chatPartner = remember { mutableStateOf(TextFieldValue()) }
     val state : MutableState<AddChannelApiStatus> = remember {mutableStateOf(AddChannelApiStatus.INPROGRESS)}
     val TAG = "add channel"
     Box(modifier = Modifier.fillMaxSize()) {
@@ -54,14 +52,14 @@ fun AddChannel(
             TextField(
 
                 label = { Text(text = "chat partner") },
-                value = channelname.value,
-                onValueChange = { channelname.value = it })
+                value = chatPartner.value,
+                onValueChange = { chatPartner.value = it })
             Spacer(modifier = Modifier.height(20.dp))
             Box(modifier = Modifier.padding(40.dp, 0.dp, 40.dp, 0.dp)) {
                 Button(
                     onClick = {
                         coroutineScope.launch {
-                                state.value = viewmodel.addChat(channelname.value.text)
+                                state.value = viewmodel.addChat(chatPartner.value.text)
                                 Log.d(TAG, "state value = ${state.value}")
                         }
                     },

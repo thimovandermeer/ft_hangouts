@@ -1,6 +1,5 @@
 package com.example.ft_hangouts.screen.Chat
 
-import android.view.View.OnClickListener
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -30,7 +29,7 @@ fun ChannelListItem(
     ) {
         Column(modifier = Modifier.padding(start = 8.dp)) { // 3
             Text(
-                text = chats.channelName.toString(),
+                text = chats.first_person.toString(),
                 style = TextStyle(fontWeight = FontWeight.Bold),
                 fontSize = 18.sp,
             )

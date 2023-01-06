@@ -20,7 +20,4 @@ abstract class RepositoryModule {
     @Binds
     abstract fun providesMessageRepository(impl: MessageRepositoryImpl) : MessageRepository
 
-    @Binds
-    abstract fun providesMessageInputRepository(impl: MessageInputRepositoryImpl) : MessageInputRepository
-
 }

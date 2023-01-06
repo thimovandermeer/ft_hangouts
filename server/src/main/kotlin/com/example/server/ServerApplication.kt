@@ -37,9 +37,9 @@ class MessageService() {
 
     fun saveChannel(newChannelName : Chats) {
         println("Channel = ${newChannelName}")
-        println("Is dit wel wat ik wil: ${newChannelName.channelName}")
+        println("Is dit wel wat ik wil: ${newChannelName.first_person}")
         // create a check if something already exists
-        var newChat = Chats(UUID.randomUUID().toString(), newChannelName.channelName)
+        var newChat = Chats(UUID.randomUUID().toString(), newChannelName.first_person, newChannelName.second_person, newChannelName.creator)
         _channels.add(newChat)
     }
 
@@ -79,4 +79,4 @@ class MessageService() {
 
 
 data class Message(@Id var messageId: String?, var channelID: String, val sender: String, val receiver: String, val isMine: Boolean, val text: String)
-data class Chats(@Id var channelID: String, var channelName: String)
+data class Chats(@Id var channelID: String, var first_person: String, var second_person: String, var creator: String)

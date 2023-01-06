@@ -1,11 +1,9 @@
 package com.example.ft_hangouts.repositories.Chat
 
 import android.util.Log
+import com.example.ft_hangouts.MainActivity
 import com.example.ft_hangouts.ViewModels.AddChannelApiStatus
 import com.example.ft_hangouts.networklayer.ChannelApi
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class ChannelRepositoryImpl @Inject constructor(
@@ -19,11 +17,10 @@ class ChannelRepositoryImpl @Inject constructor(
     override suspend fun getChats(): List<Chats> {
         return ChannelApi.retrofitService.getChannels()
     }
-    override suspend fun addChat(channelName: String) : AddChannelApiStatus {
-        Log.d(TAG, "Creating chat with name ${channelName}")
-        val newChat = Chats("0", channelName.toString())
+    override suspend fun addChat(chatPartner: String) : AddChannelApiStatus {
+        Log.d(TAG, "Creating chat with name ${chatPartner}")
+        val newChat = Chats("0", chatPartner.toString(), MainActivity.username, MainActivity.username)
         try {
-            Log.d(TAG, "wat zenden we die kant uit ${newChat}")
             ChannelApi.retrofitService.CreateChannel(newChat)
             return AddChannelApiStatus.DONE
         } catch (e: java.lang.Exception) {
