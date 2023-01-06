@@ -1,6 +1,7 @@
 package com.example.ft_hangouts.repositories.Chat
 
 import android.util.Log
+import com.example.ft_hangouts.ViewModels.AddChannelApiStatus
 import com.example.ft_hangouts.networklayer.ChannelApi
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -15,52 +16,20 @@ class ChannelRepositoryImpl @Inject constructor(
     private val TAG = "ChannelRepositoryImpl"
     private var _uuid = 0;
 
-    init {
-        Log.d(TAG, "Retrieving list of chats")
-        updateChats()
+    override suspend fun getChats(): List<Chats> {
+        return ChannelApi.retrofitService.getChannels()
     }
-
-    fun updateChats(){
-        Log.d(TAG, "Kom ik hier nog?")
-        CoroutineScope(Dispatchers.IO).launch {
-            _chatsList = ChannelApi.retrofitService.getChannels() as MutableList<Chats>
-        }
-    }
-
-    override fun getChats(): List<Chats> {
-        return _chatsList
-    }
-
-    private fun check_exists(chatname: String) : Boolean {
-        Log.d(TAG, "Chats is check exists ${_chatsList}")
-        if (_chatsList.find { chat ->  chat.channelName == chatname} == null)
-            return false
-        return true
-    }
-
-    private fun incrementUid() {
-        Log.d(TAG, "New uuid is $_uuid")
-        _uuid += 1
-    }
-
-    private fun sendApiRequest(newChat: Chats) {
-        CoroutineScope(Dispatchers.IO).launch {
+    override suspend fun addChat(channelName: String) : AddChannelApiStatus {
+        Log.d(TAG, "Creating chat with name ${channelName}")
+        val newChat = Chats("0", channelName.toString())
+        try {
+            Log.d(TAG, "wat zenden we die kant uit ${newChat}")
             ChannelApi.retrofitService.CreateChannel(newChat)
+            return AddChannelApiStatus.DONE
+        } catch (e: java.lang.Exception) {
+            Log.d(TAG, "Exception add chat ${e.message}")
+            return AddChannelApiStatus.ERROR
         }
     }
-    override fun addChat(chatname: String) : Boolean {
-        if (check_exists(chatname)) {
-            Log.d(TAG,"Check exists returns true")
-            return false
-        }
-        else {
-            val newChat : Chats = Chats(_uuid.toString(), chatname)
-            Log.d(TAG, "New chat being added to list ${newChat}")
-            sendApiRequest(newChat)
-            incrementUid()
-            updateChats()
-            Log.d(TAG, "Chat list after addition ${_chatsList}")
-            return true
-        }
-    }
+
 }

@@ -1,5 +1,7 @@
 package com.example.ft_hangouts.repositories.Chat
 
+import com.example.ft_hangouts.ViewModels.AddChannelApiStatus
+
 
 data class Chats(
     val channelID: String,
@@ -7,7 +9,7 @@ data class Chats(
 )
 
 interface ChannelRepository {
-    fun getChats() : List<Chats>
-    fun addChat(chatname : String) : Boolean
+    suspend fun getChats(): List<Chats>
+    suspend fun addChat(channelName: String) : AddChannelApiStatus
 
 }
