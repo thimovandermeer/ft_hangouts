@@ -68,8 +68,8 @@ class MessageService() {
             service.findbyChannelName(channelID)
 
 
-        @PostMapping("/")
-        fun post(@RequestBody message: Message) {
+        @PostMapping("/{channelID}")
+        fun post(@PathVariable channelID: String, @RequestBody message: Message) {
             service.save(message)
         }
 
