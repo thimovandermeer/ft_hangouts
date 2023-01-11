@@ -17,7 +17,6 @@ class UserRepositoryImpl @Inject constructor(
     private var _uuid = 0
 
     init {
-        Log.d(TAG, "INIT function")
         getAllOnStartUp()
     }
 
@@ -73,7 +72,6 @@ class UserRepositoryImpl @Inject constructor(
         val uuid = getUuid()
         val new = User(uuid.toString(), username, password, email)
         incrementUuid()
-        Log.d(TAG, "Save function is called")
         this.userDao.insert(new)
         updateLocalList()
     }

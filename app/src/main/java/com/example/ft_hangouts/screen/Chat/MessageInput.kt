@@ -28,6 +28,7 @@ fun MessageInput(
         if (uuid != null) {
             coroutineScope.launch {
                 messageInputViewModel.sendMessage(inputValue.toString(), uuid)
+
             }
         }
     }

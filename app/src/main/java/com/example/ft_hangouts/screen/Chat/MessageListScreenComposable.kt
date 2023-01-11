@@ -16,7 +16,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 
 @Composable
 fun MessageListScreen(navController: NavController, uuid: String?, viewModel: MessageListViewModel = hiltViewModel()) {
-    Log.d("MessageListScreen", "Which pane do I enter ${uuid}")
     Column(Modifier.fillMaxSize()) {
         MessageList(
             navController = navController,

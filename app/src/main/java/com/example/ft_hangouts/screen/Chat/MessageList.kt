@@ -34,7 +34,6 @@ fun MessageList(
         viewModel.getMessages()
     }
 
-    Log.d("MessageList", "Wordt deze nou opnieuw aangeroepen of niet ${messages}")
     Box(
         modifier = modifier,
         contentAlignment = Alignment.Center
@@ -44,8 +43,6 @@ fun MessageList(
             Text(text = "MESSAGE API IS LOADING")
         } else if (viewModel.status.value == MessagesApiStatus.ERROR) {
             Text(text = "MESSAGE API IN ERROR STATE", color = Color.Red)
-        } else {
-            Text(text = "Message API IN DONE", color = Color.Green)
         }
         LazyColumn(
             modifier = Modifier.fillMaxSize(),

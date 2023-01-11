@@ -53,7 +53,6 @@ fun ChannelListScreen(
                 Modifier.fillMaxSize()
             ) {
                 if(viewModel.status.value == ChannelApiStatus.DONE) {
-                    Log.d("ChannelListScreenComp","Kom ik hier?")
                     if (chats != null) {
                         items(chats) { chat ->
                             ChannelListItem(

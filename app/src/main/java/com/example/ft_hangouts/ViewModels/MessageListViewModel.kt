@@ -44,7 +44,6 @@ class MessageListViewModel @Inject constructor(
 
     // dit moet naar de repository impl
     fun getMessages() {
-        Log.d(TAG, "Wat is de waarde van _messages voor get messages ${_uiState.value.currentListOfMessages}")
         viewModelScope.launch {
             _status.value = MessagesApiStatus.LOADING
             try {

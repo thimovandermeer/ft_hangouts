@@ -5,10 +5,6 @@ import android.util.Log
 import com.example.ft_hangouts.MainActivity
 import com.example.ft_hangouts.ViewModels.AddChannelApiStatus
 import com.example.ft_hangouts.networklayer.MessageApi
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class MessageRepositoryImpl @Inject constructor(
@@ -41,7 +37,6 @@ class MessageRepositoryImpl @Inject constructor(
     }
     override suspend fun sendMessages(message: String, chatId: String) {
         val chatInfo = retrieve_channel_info(chatId)
-        Log.d(TAG, "Is de message echt leeg: $message")
         val message = create_message_object(chatId, message, chatInfo, MainActivity.username)
         // coroutine scope omheen bouwen
         try {

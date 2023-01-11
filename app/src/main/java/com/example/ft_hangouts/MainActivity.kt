@@ -21,17 +21,13 @@ class MainActivity : ComponentActivity() {
     private val viewModel by viewModels<RegisterViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        Log.d("Main Activity", "Kom ik hier?")
         super.onCreate(savedInstanceState)
         setContent {
-            Log.d("Main Activity", "set content")
             Ft_hangoutsTheme {
-                Log.d("Main Activity", "theme setting")
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Log.d("Main activity", "Kom ik voor main activity")
                     ScreenMain()
                 }
             }
@@ -43,7 +39,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview() {
     Ft_hangoutsTheme {
-        Log.d("Main Activity", "default preview")
         ScreenMain()
     }
 }
