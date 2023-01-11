@@ -12,19 +12,15 @@ import androidx.compose.material.icons.filled.Send
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.semantics.SemanticsProperties.ImeAction
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.example.ft_hangouts.R
-import com.example.ft_hangouts.ViewModels.MessageInputViewModel
-import com.example.ft_hangouts.repositories.Chat.Chats
-import kotlinx.coroutines.coroutineScope
+import com.example.ft_hangouts.ViewModels.MessageListViewModel
 import kotlinx.coroutines.launch
 
 @Composable
 fun MessageInput(
     uuid: String?,
-    messageInputViewModel: MessageInputViewModel = hiltViewModel(), // 1
+    messageInputViewModel: MessageListViewModel = hiltViewModel(), // 1
 ) {
     var inputValue by remember { mutableStateOf("") } // 2
     val coroutineScope = rememberCoroutineScope()
