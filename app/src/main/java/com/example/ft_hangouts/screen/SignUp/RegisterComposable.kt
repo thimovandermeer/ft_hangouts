@@ -32,7 +32,7 @@ fun Registercomposable(
             onClick = {
                 coroutineScope.launch {
                     withContext(Dispatchers.IO) {
-                        accept.value = viewModel.handleInput(username.value.toString(), email.value.toString(), password.value.toString())
+                        accept.value = viewModel.handleInput(username.value.text, email.value.text, password.value.text)
                     }
                 }
             },

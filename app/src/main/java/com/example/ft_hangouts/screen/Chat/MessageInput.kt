@@ -17,18 +17,23 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.ft_hangouts.R
 import com.example.ft_hangouts.ViewModels.MessageInputViewModel
+import com.example.ft_hangouts.repositories.Chat.Chats
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
 
 @Composable
 fun MessageInput(
     uuid: String?,
     messageInputViewModel: MessageInputViewModel = hiltViewModel(), // 1
 ) {
-    messageInputViewModel.channelID.value = uuid
     var inputValue by remember { mutableStateOf("") } // 2
-
+    val coroutineScope = rememberCoroutineScope()
     fun sendMessage() { // 3
-        messageInputViewModel.sendMessage(inputValue)
-        inputValue = ""
+        if (uuid != null) {
+            coroutineScope.launch {
+                messageInputViewModel.sendMessage(inputValue.toString(), uuid)
+            }
+        }
     }
     Row {
         TextField( // 4

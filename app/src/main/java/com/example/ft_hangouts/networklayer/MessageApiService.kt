@@ -33,7 +33,7 @@ interface MessageApiService {
     suspend fun getChannelMessages(@Path("id") channelID: String) : List<Message>
 
     @POST("/{id}")
-    suspend fun sendMessage(@Path("id") channelID: String, message: Message)
+    suspend fun sendMessage(@Path("id") channelID: String, @Body message: Message)
 }
 
 object ChannelApi {
@@ -45,6 +45,9 @@ object ChannelApi {
 interface ChannelApiService {
     @GET("channels")
     suspend fun getChannels() : List<Chats>
+
+    @GET("channels/{id}")
+    suspend fun getChannel(@Path("id") channelID: String) : Chats
 
     @POST("channels")
     suspend fun CreateChannel(@Body newChatName: Chats)

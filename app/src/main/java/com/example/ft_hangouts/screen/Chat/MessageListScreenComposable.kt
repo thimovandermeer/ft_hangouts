@@ -11,6 +11,7 @@ import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.ft_hangouts.ViewModels.MessageListViewModel
+import com.example.ft_hangouts.repositories.Chat.Chats
 import dagger.hilt.android.lifecycle.HiltViewModel
 
 @Composable
@@ -24,7 +25,7 @@ fun MessageListScreen(navController: NavController, uuid: String?, viewModel: Me
             viewModel = viewModel
         )
         MessageInput(
-            uuid = uuid
+            uuid = uuid,
         )
     }
 }

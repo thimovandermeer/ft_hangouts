@@ -13,6 +13,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavController
 import com.example.ft_hangouts.ViewModels.MessageListViewModel
 import com.example.ft_hangouts.ViewModels.MessagesApiStatus
+import com.example.ft_hangouts.repositories.Chat.Chats
 
 @Composable
 fun MessageList(

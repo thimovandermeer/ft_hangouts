@@ -103,7 +103,7 @@ class RegisterViewModel @Inject constructor(
         password: String
     ) : RegisterState {
         var ret : RegisterState;
-        Log.d(TAG, "Handle input called")
+        Log.d(TAG, "username = $username\n email = $email\n password = $password")
         ret = validateInput(username, email, password)
         Log.d(TAG, "State is after validation $ret")
         if (ret == RegisterState.INPROGRESS) {

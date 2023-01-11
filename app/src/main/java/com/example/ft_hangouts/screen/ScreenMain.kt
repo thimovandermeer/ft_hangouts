@@ -5,6 +5,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.ft_hangouts.Routes
+import com.example.ft_hangouts.repositories.Chat.Chats
 import com.example.ft_hangouts.screen.Chat.AddChannel
 import com.example.ft_hangouts.screen.Chat.ChatPage
 import com.example.ft_hangouts.screen.Chat.MessageListScreen
@@ -39,7 +40,8 @@ fun ScreenMain(){
         composable("MessageList/{uid}") { backStackEntry ->
             MessageListScreen(
                 navController = navController,
-                uuid = backStackEntry.arguments?.getString("uid"))
+                uuid = backStackEntry.arguments?.getString("uid")
+            )
         }
     }
 }

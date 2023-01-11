@@ -14,6 +14,9 @@ class ChannelRepositoryImpl @Inject constructor(
     private val TAG = "ChannelRepositoryImpl"
     private var _uuid = 0;
 
+    override suspend fun getChat(chatId: String) : Chats {
+        return ChannelApi.retrofitService.getChannel(chatId)
+    }
     override suspend fun getChats(): List<Chats> {
         return ChannelApi.retrofitService.getChannels()
     }

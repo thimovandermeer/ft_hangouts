@@ -59,8 +59,9 @@ fun AddChannel(
                 Button(
                     onClick = {
                         coroutineScope.launch {
-                                state.value = viewmodel.addChat(chatPartner.value.text)
-                                Log.d(TAG, "state value = ${state.value}")
+                            Log.d(TAG, "Is dit dit nog fout verstuurd wordt ${chatPartner.component1().text}")
+                            state.value = viewmodel.addChat(chatPartner.component1().text)
+                            Log.d(TAG, "state value = ${state.value}")
                         }
                     },
                     shape = RoundedCornerShape(50.dp),

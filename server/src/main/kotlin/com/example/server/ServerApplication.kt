@@ -43,6 +43,13 @@ class MessageService() {
         _channels.add(newChat)
     }
 
+    fun getChannel(ChannelID: String) : Chats {
+        println("Searching channelID ${ChannelID}")
+        println("Channels = ${_channels}")
+        val res = _channels.filter { chats ->  chats.channelID == ChannelID}
+        return res[0]
+    }
+
 }
     @SpringBootApplication
     class ServerApplication
@@ -70,6 +77,9 @@ class MessageService() {
         fun indexChannels() : MutableList<Chats> =
             service.findChannels()
 
+        @GetMapping("/channels/{channelID}")
+        fun getChannelInfo(@PathVariable channelID: String) : Chats =
+            service.getChannel(channelID)
         @PostMapping("/channels")
         fun postChannel(@RequestBody channelName: Chats) {
             service.saveChannel(channelName)

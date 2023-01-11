@@ -12,6 +12,7 @@ data class Chats(
 
 interface ChannelRepository {
     suspend fun getChats(): List<Chats>
+    suspend fun getChat(chatId: String): Chats
     suspend fun addChat(channelName: String) : AddChannelApiStatus
 
 }

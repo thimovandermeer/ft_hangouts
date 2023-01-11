@@ -24,7 +24,7 @@ fun LoginComposable(
     Spacer(modifier = Modifier.height(20.dp))
     Box(modifier = Modifier.padding(40.dp, 0.dp, 40.dp, 0.dp)) {
         Button(
-            onClick = {loginstate.value = viewModel.handleLogin(username.value.toString(), password.value.toString())},
+            onClick = {loginstate.value = viewModel.handleLogin(username.value.text, password.value.text)},
             shape = RoundedCornerShape(50.dp),
             modifier = Modifier
                 .fillMaxWidth()
