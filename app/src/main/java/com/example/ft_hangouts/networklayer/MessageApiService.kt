@@ -1,6 +1,7 @@
 package com.example.ft_hangouts.networklayer
 
 import android.util.Log
+import com.example.ft_hangouts.ViewModels.PartnerInfo
 import com.example.ft_hangouts.repositories.Chat.Chats
 import com.example.ft_hangouts.repositories.Chat.Message
 import retrofit2.Retrofit
@@ -51,5 +52,8 @@ interface ChannelApiService {
 
     @POST("channels")
     suspend fun CreateChannel(@Body newChatName: Chats)
+
+    @POST("person")
+    suspend fun SavePersonInfo(@Body partnerInfo: PartnerInfo)
 }
 

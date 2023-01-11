@@ -13,6 +13,7 @@ import org.springframework.data.annotation.Id
 class MessageService() {
     var _messages: MutableList<Message> = mutableListOf()
     var _channels: MutableList<Chats> = mutableListOf()
+    var _persons: MutableList<PartnerInfo> = mutableListOf()
     fun findMessages(): List<Message> {
         println("All messages in return functin= ${_messages}")
         return _messages
@@ -50,6 +51,11 @@ class MessageService() {
         return res[0]
     }
 
+    fun savePerson(personInfo: PartnerInfo) {
+        println("adding personinfo ${personInfo}")
+        _persons.add(personInfo)
+    }
+
 }
     @SpringBootApplication
     class ServerApplication
@@ -84,9 +90,22 @@ class MessageService() {
         fun postChannel(@RequestBody channelName: Chats) {
             service.saveChannel(channelName)
         }
+
+        @PostMapping("/person")
+        fun addPerson(@RequestBody personInfo: PartnerInfo) {
+            service.savePerson(personInfo)
+        }
     }
 
 
 
 data class Message(@Id var messageId: String?, var channelID: String, val sender: String, val receiver: String, val isMine: Boolean, val text: String)
 data class Chats(@Id var channelID: String, var first_person: String, var second_person: String, var creator: String)
+
+data class PartnerInfo(
+    var firstName: String,
+    var lastName: String,
+    var profession: String,
+    var favoriteAnimal: String,
+    var epicBeer: String
+)

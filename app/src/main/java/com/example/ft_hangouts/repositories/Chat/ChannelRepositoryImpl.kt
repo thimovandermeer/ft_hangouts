@@ -3,6 +3,7 @@ package com.example.ft_hangouts.repositories.Chat
 import android.util.Log
 import com.example.ft_hangouts.MainActivity
 import com.example.ft_hangouts.ViewModels.AddChannelApiStatus
+import com.example.ft_hangouts.ViewModels.PartnerInfo
 import com.example.ft_hangouts.networklayer.ChannelApi
 import javax.inject.Inject
 
@@ -29,6 +30,15 @@ class ChannelRepositoryImpl @Inject constructor(
         } catch (e: java.lang.Exception) {
             Log.d(TAG, "Exception add chat ${e.message}")
             return AddChannelApiStatus.ERROR
+        }
+    }
+
+    override suspend fun savePersonInfo(partnerInfo: PartnerInfo) {
+        Log.d(TAG, "Saving person info ${partnerInfo}")
+        try {
+            ChannelApi.retrofitService.SavePersonInfo(partnerInfo)
+        } catch (e: java.lang.Exception) {
+            Log.d(TAG,"Exception occured ${e.message}")
         }
     }
 
