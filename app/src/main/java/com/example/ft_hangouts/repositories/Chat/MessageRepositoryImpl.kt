@@ -18,7 +18,8 @@ class MessageRepositoryImpl @Inject constructor(
 
     private val TAG = "MessageRepositoryImpl"
     override suspend fun getMessages(channelID: String): List<Message> {
-       return  MessageApi.retrofitService.getChannelMessages(channelID)
+       val result =  MessageApi.retrofitService.getChannelMessages(channelID)
+        return result.reversed()
     }
 
     suspend fun retrieve_channel_info(chatId: String) : Chats {

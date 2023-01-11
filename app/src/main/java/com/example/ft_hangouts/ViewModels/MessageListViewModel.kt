@@ -69,6 +69,5 @@ class MessageListViewModel @Inject constructor(
         }
     }
 
-//    Log.d(TAG, "Entering Message List View Model")
 
 }
