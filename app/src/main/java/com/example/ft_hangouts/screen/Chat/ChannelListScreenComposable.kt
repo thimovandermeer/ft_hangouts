@@ -46,8 +46,6 @@ fun ChannelListScreen(
                 Text(text = "Channel API IS LOADING")
             } else if (viewModel.status.value == ChannelApiStatus.ERROR) {
                 Text(text = "Channel API IN ERROR STATE", color = Color.Red)
-            }else {
-                Text(text = "Channel API IN DONE", color = Color.Green)
             }
             LazyColumn(
                 Modifier.fillMaxSize()
