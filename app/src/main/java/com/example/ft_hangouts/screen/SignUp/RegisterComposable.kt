@@ -8,9 +8,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.example.ft_hangouts.R
 import com.example.ft_hangouts.RegisterViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -41,7 +43,7 @@ fun Registercomposable(
                 .fillMaxWidth()
                 .height(50.dp)
         ) {
-            Text(text = "Register")
+            Text(text = stringResource(R.string.registerText))
         }
     }
 }

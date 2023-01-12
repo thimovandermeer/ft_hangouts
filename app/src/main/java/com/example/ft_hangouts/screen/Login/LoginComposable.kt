@@ -7,9 +7,11 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.example.ft_hangouts.R
 import com.example.ft_hangouts.Routes
 import com.example.ft_hangouts.ViewModels.LoginViewModel
 
@@ -30,7 +32,7 @@ fun LoginComposable(
                 .fillMaxWidth()
                 .height(50.dp)
         ) {
-            Text(text = "Login")
+            Text(text = stringResource(R.string.loginText))
         }
     }
     if (loginstate.value == LoginViewModel.LoginState.REDIRECT) {

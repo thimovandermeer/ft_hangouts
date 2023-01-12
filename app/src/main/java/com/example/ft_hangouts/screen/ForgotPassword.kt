@@ -11,9 +11,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.Black
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight.Companion.Black
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.example.ft_hangouts.R
 import com.example.ft_hangouts.component.CustomTopAppBar
 @Composable
 fun ForgotPassword(navController: NavHostController) {
@@ -26,7 +28,7 @@ fun ForgotPassword(navController: NavHostController) {
 fun ScaffoldWithTopBarForgotPass(navController: NavHostController) {
     Scaffold(
         topBar = {
-            CustomTopAppBar(navController, "Forgot Password", true)
+            CustomTopAppBar(navController, stringResource(R.string.forgotpasswordTextForgotPassword), true)
         }, content = {
             Column(
                 modifier = Modifier
@@ -35,7 +37,7 @@ fun ScaffoldWithTopBarForgotPass(navController: NavHostController) {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
-                    text = "Forgot Password",
+                    text = stringResource(R.string.forgotpasswordTextForgotPassword),
                     fontSize = 30.sp,
                     color = Color.Black
                 )

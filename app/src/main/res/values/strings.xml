@@ -1,3 +1,35 @@
 <resources>
     <string name="app_name">ft_hangouts</string>
+    <string name="selected_language">ft_hangouts</string>
+    <string name="language">ft_hangouts</string>
+    <string name="LoginText">Login</string>
+    <string name="userdoesnotexitsText">User does not exist</string>
+    <string name="UsernameText">Username</string>
+    <string name="passwordincorrectText">Password In correct</string>
+    <string name="passwordText">Password</string>
+    <string name="loginText">Login</string>
+    <string name="forgotpasswordText">Forgot password?</string>
+    <string name="emailincorrectText">email invalid</string>
+    <string name="emailalreadyexistsText">email already exists</string>
+    <string name="emailText">email</string>
+    <string name="signuphereText">Sign up here</string>
+    <string name="passwordinvalidText">Password invalid</string>
+    <string name="passwordalreadyexistsText">Password already exists</string>
+    <string name="passwordTextSignup">Password</string>
+    <string name="registerText">Register</string>
+    <string name="registestTextSignup">Register</string>
+    <string name="usernameinvalidText">Username invalid</string>
+    <string name="usernamealreadyexistsText">Username already exists</string>
+    <string name="usernameText">Username</string>
+    <string name="forgotpasswordTextForgotPassword">Forgot Password</string>
+    <string name="channelalreadtexistsText">Channel already exists</string>
+    <string name="createnewchatText">Create new chat</string>
+    <string name="firstnameText">firstname</string>
+    <string name="lastnameText">lastname</string>
+    <string name="professionText">profession</string>
+    <string name="favoriteanimalText">favorite animal</string>
+    <string name="epicbeerText">epic beer</string>
+    <string name="registerchannelText">Register</string>
+    <string name="chatchannellistitemText">Chat</string>
+    <string name="persondetailsText">Person details</string>
 </resources>

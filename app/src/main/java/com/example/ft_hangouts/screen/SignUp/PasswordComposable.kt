@@ -9,10 +9,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
+import com.example.ft_hangouts.R
 import com.example.ft_hangouts.RegisterViewModel
 
 @Composable
@@ -23,14 +25,14 @@ fun Passwordcomposable(
     if (accept.value == RegisterViewModel.RegisterState.PASSWORDINVALID) {
         Spacer(modifier = Modifier.height(20.dp))
         TextField(
-            label = { Text(text = "Password invalid", color = Color.Red) },
+            label = { Text(text = stringResource(R.string.passwordinvalidText), color = Color.Red) },
             value = password.value,
             visualTransformation = PasswordVisualTransformation(),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
             onValueChange = { password.value = it })
     } else if (accept.value == RegisterViewModel.RegisterState.PASSWORDEXISTS) {
         TextField(
-            label = { Text(text = "Password already exists", color = Color.Red) },
+            label = { Text(text = stringResource(R.string.passwordalreadyexistsText), color = Color.Red) },
             value = password.value,
             visualTransformation = PasswordVisualTransformation(),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
@@ -38,7 +40,7 @@ fun Passwordcomposable(
     }else {
         Spacer(modifier = Modifier.height(20.dp))
         TextField(
-            label = { Text(text = "Password") },
+            label = { Text(text = stringResource(R.string.passwordTextSignup)) },
             value = password.value,
             visualTransformation = PasswordVisualTransformation(),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),

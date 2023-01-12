@@ -6,6 +6,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.input.TextFieldValue
@@ -13,6 +14,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
+import com.example.ft_hangouts.R
 import com.example.ft_hangouts.RegisterViewModel
 import com.example.ft_hangouts.Routes
 import com.example.ft_hangouts.screen.SignUp.Emailcomposable
@@ -39,7 +41,7 @@ fun Inputfields(navController: NavHostController, viewModel: RegisterViewModel =
         val email = remember {mutableStateOf(TextFieldValue()) }
         val password = remember { mutableStateOf(TextFieldValue()) }
         val accept : MutableState<RegisterViewModel.RegisterState> = remember {mutableStateOf(RegisterViewModel.RegisterState.INPROGRESS)}
-        Text(text = "Register", style = TextStyle(fontSize = 40.sp, fontFamily = FontFamily.Cursive))
+        Text(text = stringResource(R.string.registestTextSignup), style = TextStyle(fontSize = 40.sp, fontFamily = FontFamily.Cursive))
 
         Spacer(modifier = Modifier.height(20.dp))
 

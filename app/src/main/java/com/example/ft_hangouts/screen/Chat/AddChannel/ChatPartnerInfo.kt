@@ -6,8 +6,10 @@ import androidx.compose.material.Text
 import androidx.compose.material.TextField
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
+import com.example.ft_hangouts.R
 import com.example.ft_hangouts.ViewModels.AddChannelApiStatus
 import com.example.ft_hangouts.ViewModels.AddChannelViewModel
 import com.example.ft_hangouts.ViewModels.PartnerInfo
@@ -26,13 +28,13 @@ fun AddChatPartnerInfo(
 
     Spacer(modifier = Modifier.height(20.dp))
     TextField(
-        label = { Text(text = "firstname") },
+        label = { Text(text = stringResource(R.string.firstnameText)) },
         value = firstname.value,
         onValueChange = { firstname.value = it })
     Spacer(modifier = Modifier.height(20.dp))
     TextField(
 
-        label = { Text(text = "lastname") },
+        label = { Text(text = stringResource(R.string.lastnameText)) },
         value = lastname.value,
         onValueChange = { lastname.value = it })
     Spacer(modifier = Modifier.height(20.dp))
@@ -40,7 +42,7 @@ fun AddChatPartnerInfo(
     Spacer(modifier = Modifier.height(20.dp))
     TextField(
 
-        label = { Text(text = "profession") },
+        label = { Text(text = stringResource(R.string.professionText)) },
         value = profession.value,
         onValueChange = { profession.value = it })
     Spacer(modifier = Modifier.height(20.dp))
@@ -48,7 +50,7 @@ fun AddChatPartnerInfo(
     Spacer(modifier = Modifier.height(20.dp))
     TextField(
 
-        label = { Text(text = "favorite animal") },
+        label = { Text(text = stringResource(R.string.favoriteanimalText)) },
         value = favoriteAnimal.value,
         onValueChange = { favoriteAnimal.value = it })
     Spacer(modifier = Modifier.height(20.dp))
@@ -56,7 +58,7 @@ fun AddChatPartnerInfo(
     Spacer(modifier = Modifier.height(20.dp))
     TextField(
 
-        label = { Text(text = "epic beer") },
+        label = { Text(text = stringResource(R.string.epicbeerText)) },
         value = epicBeer.value,
         onValueChange = { epicBeer.value = it })
     Spacer(modifier = Modifier.height(20.dp))

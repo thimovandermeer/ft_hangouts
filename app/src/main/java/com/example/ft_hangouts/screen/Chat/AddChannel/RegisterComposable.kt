@@ -12,7 +12,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.example.ft_hangouts.R
 import com.example.ft_hangouts.ViewModels.AddChannelApiStatus
 import com.example.ft_hangouts.ViewModels.AddChannelViewModel
 import com.example.ft_hangouts.ViewModels.PartnerInfo
@@ -40,7 +42,7 @@ fun registerChannelComposable(
                 .fillMaxWidth()
                 .height(50.dp)
         ) {
-            Text(text = "Register")
+            Text(text = stringResource(R.string.registerchannelText))
         }
     }
 }

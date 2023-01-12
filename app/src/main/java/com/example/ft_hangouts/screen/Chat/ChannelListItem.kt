@@ -12,11 +12,13 @@ import androidx.compose.material.icons.filled.Star
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.ft_hangouts.R
 import com.example.ft_hangouts.repositories.Chat.Chats
 
 @Composable
@@ -44,14 +46,16 @@ fun ChannelListItem(
         }
 
         Spacer(Modifier.size(ButtonDefaults.IconSpacing))
-        Text("Chat",
+        Text(
+                    stringResource(R.string.chatchannellistitemText),
         modifier = Modifier
             .clickable { onClickChats() }
             .size(ButtonDefaults.IconSize)
             .weight(1f))
 
         Spacer(Modifier.size(ButtonDefaults.IconSpacing))
-        Text("Person details",
+        Text(
+                    stringResource(R.string.persondetailsText),
             modifier = Modifier
                 .clickable { onClickDetail() }
                 .size(ButtonDefaults.IconSize)

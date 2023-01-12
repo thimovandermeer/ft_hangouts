@@ -9,6 +9,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
@@ -18,6 +19,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
+import com.example.ft_hangouts.R
 import com.example.ft_hangouts.Routes
 import com.example.ft_hangouts.ViewModels.LoginViewModel
 import com.example.ft_hangouts.screen.Login.ForgotPasswordComposable
@@ -30,7 +32,7 @@ import com.example.ft_hangouts.ui.theme.Purple700
 fun LoginPage(navController: NavHostController, viewModel: LoginViewModel = hiltViewModel()) {
     Box(modifier = Modifier.fillMaxSize()) {
         ClickableText(
-            text = AnnotatedString("Sign up here"),
+            text = AnnotatedString(stringResource(R.string.signuphereText)),
             modifier = Modifier
                 .align(Alignment.BottomCenter)
                 .padding(20.dp),
@@ -54,7 +56,7 @@ fun LoginPage(navController: NavHostController, viewModel: LoginViewModel = hilt
         var loginstate : MutableState<LoginViewModel.LoginState> = remember {mutableStateOf(
             LoginViewModel.LoginState.INPROGRESS)}
 
-        Text(text = "Login", style = TextStyle(fontSize = 40.sp, fontFamily = FontFamily.Cursive))
+        Text(text = stringResource(R.string.LoginText), style = TextStyle(fontSize = 40.sp, fontFamily = FontFamily.Cursive))
 
         UsernameComposable(username, loginstate)
         PasswordComposable(password, loginstate)

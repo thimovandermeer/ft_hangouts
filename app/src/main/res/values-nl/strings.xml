@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name"> Verblijfsplaats</string>
+    <string name="selected_language"> Geselecteerde taal</string>
+    <string name="language">Taal</string>
+    <string name="LoginText">Inloggen</string>
+    <string name="userdoesnotexitsText">Gebruiker bestaat niet</string>
+    <string name="UsernameText">Gebruikers naam</string>
+    <string name="passwordincorrectText">Wachtwoord incorrect</string>
+    <string name="passwordText">Wachtwoord</string>
+    <string name="loginText">Inloggen</string>
+    <string name="forgotpasswordText">Wachtwoord vergeten?</string>
+    <string name="emailincorrectText">email incorrect</string>
+    <string name="emailalreadyexistsText">email bestaat al</string>
+    <string name="emailText">email</string>
+    <string name="signuphereText">Registreer hier</string>
+    <string name="passwordTextSignup">Wachtwoord</string>
+    <string name="registerText">Registreer</string>
+    <string name="registestTextSignup">Registreer</string>
+    <string name="usernameinvalidText">gebruikersnaam incorrect</string>
+    <string name="usernamealreadyexistsText">gebruikersnaam bestaat all</string>
+    <string name="usernameText">Gebruikersnaam</string>
+    <string name="channelalreadtexistsText">Kanaal bestaat al</string>
+    <string name="createnewchatText">maak nieuwe chat</string>
+    <string name="firstnameText">voornaam</string>
+    <string name="lastnameText">achternaam</string>
+    <string name="professionText">beroep</string>
+    <string name="favoriteanimalText">favoriete dier</string>
+    <string name="epicbeerText">geweldig biertje</string>
+    <string name="registerchannelText">Registreer</string>
+    <string name="chatchannellistitemText">Chat</string>
+    <string name="persondetailsText">Persoonlijke details</string>
+    <string name="forgotpasswordTextForgotPassword">Wachtwoord vergeten</string>
+    <string name="passwordalreadyexistsText">Wachtwoord bestaat al</string>
+    <string name="passwordinvalidText">Wachtwoord incorrect</string>
+
+
+
+</resources>
