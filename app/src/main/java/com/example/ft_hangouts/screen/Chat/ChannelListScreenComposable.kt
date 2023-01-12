@@ -55,7 +55,7 @@ fun ChannelListScreen(
                         items(chats) { chat ->
                             ChannelListItem(
                                 chats = chat,
-                                onClick = {navController.navigate("MessageList/${chat.channelID}")},
+                                navController
                             )
                             Divider()
                         }
