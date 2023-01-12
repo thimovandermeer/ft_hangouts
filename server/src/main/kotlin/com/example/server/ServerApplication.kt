@@ -56,6 +56,13 @@ class MessageService() {
         _persons.add(personInfo)
     }
 
+    fun getPerson(person: String) : PartnerInfo {
+        println("Seaching person info with id ${person}")
+        val res = _persons.filter { partnerInfo ->  partnerInfo.firstName == person}
+        println("found person ${res}")
+        return res[0]
+    }
+
 }
     @SpringBootApplication
     class ServerApplication
@@ -95,6 +102,10 @@ class MessageService() {
         fun addPerson(@RequestBody personInfo: PartnerInfo) {
             service.savePerson(personInfo)
         }
+
+        @GetMapping("/person/{person}")
+        fun getPersonInfo(@PathVariable person: String) : PartnerInfo =
+            service.getPerson(person)
     }
 
 

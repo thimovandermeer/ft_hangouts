@@ -40,7 +40,7 @@ class MessageRepositoryImpl @Inject constructor(
         val message = create_message_object(chatId, message, chatInfo, MainActivity.username)
         // coroutine scope omheen bouwen
         try {
-            Log.d(TAG, "Trying to send message: ${message}\n on channelID ${chatId}")
+            Log.d(TAG, "Trying to send message: ${message}\n on person ${chatId}")
             MessageApi.retrofitService.sendMessage(chatId, message)
         } catch (e: java.lang.Exception) {
             Log.d(TAG, "Exception send message ${e.message}")

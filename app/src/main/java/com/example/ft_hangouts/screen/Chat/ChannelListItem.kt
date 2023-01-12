@@ -26,7 +26,7 @@ fun ChannelListItem(
 ) {
     val TAG = "ChannelListItem"
     val onClickChats = {navController.navigate("MessageList/${chats.channelID}")}
-    val onClickDetail = {navController.navigate("Details/${chats.channelID}")}
+    val onClickDetail = {navController.navigate("Details/${chats.first_person}")}
     Row( // 1
         modifier = Modifier
 

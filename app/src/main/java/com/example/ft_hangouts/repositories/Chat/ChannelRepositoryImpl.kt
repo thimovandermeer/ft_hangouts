@@ -42,4 +42,9 @@ class ChannelRepositoryImpl @Inject constructor(
         }
     }
 
+    override suspend fun getPersonInfo(person: String): PartnerInfo {
+        Log.d(TAG, "Retrieve person info with ID ${person}")
+        return ChannelApi.retrofitService.getPersonInfo(person)
+    }
+
 }

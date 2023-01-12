@@ -44,10 +44,10 @@ fun ScreenMain(){
             )
         }
 
-        composable("Details/{uid}") { backStackEntry ->
+        composable("Details/{first_person}") { backStackEntry ->
             DetailsScreen(
                 navController = navController,
-                uuid = backStackEntry.arguments?.getString("uid")
+                person = backStackEntry.arguments?.getString("first_person")
             )
         }
     }
