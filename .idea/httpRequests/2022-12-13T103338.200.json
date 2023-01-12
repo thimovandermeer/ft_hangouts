@@ -1,0 +1,26 @@
+[
+  {
+    "messageId": "feb91541-47ea-4041-b311-d9116433f82b",
+    "channelID": "1",
+    "sender": "Peter",
+    "receiver": "Dave",
+    "isMine": true,
+    "text": "doei doei doei"
+  },
+  {
+    "messageId": "6de90c50-e68f-4358-84ed-350d48cb9b63",
+    "channelID": "1",
+    "sender": "Peter",
+    "receiver": "Dave",
+    "isMine": true,
+    "text": "doei doei doei"
+  },
+  {
+    "messageId": "213a2939-454d-43f2-8b09-765d894b68b3",
+    "channelID": "1",
+    "sender": "Peter",
+    "receiver": "Dave",
+    "isMine": true,
+    "text": "doei doei doei"
+  }
+]

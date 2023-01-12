@@ -1,0 +1,10 @@
+[
+  {
+    "messageId": "05581bd7-203d-4ad6-9f2c-3fc7c0fbe88b",
+    "channelID": "1",
+    "sender": "Peter",
+    "receiver": "Dave",
+    "isMine": true,
+    "text": "doei doei doei"
+  }
+]

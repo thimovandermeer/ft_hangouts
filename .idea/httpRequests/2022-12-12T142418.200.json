@@ -1,0 +1,32 @@
+[
+  {
+    "id": "b7f6a4bc-2cea-4aa7-ac8b-1f02b1e87ad7",
+    "sender": "Henk",
+    "receiver": "Ingrid",
+    "text": "Bonjour!"
+  },
+  {
+    "id": "4369612c-d69e-4e00-b892-7bb19e73adbe",
+    "sender": "Henk",
+    "receiver": "Ingrid",
+    "text": "Bonjour!"
+  },
+  {
+    "id": "96db3d94-24ee-41cb-8248-57b21c9efb3f",
+    "sender": "Henk",
+    "receiver": "Ingrid",
+    "text": "Bonjour!"
+  },
+  {
+    "id": "1fedba25-33b5-4bfd-af6d-78f49f28edbb",
+    "sender": "Henk",
+    "receiver": "Ingrid",
+    "text": "Bonjour!"
+  },
+  {
+    "id": "c3a3d02d-6196-4764-b8cb-ecc22fe6f193",
+    "sender": "Peter",
+    "receiver": "Dave",
+    "text": "dahaaaaaaag"
+  }
+]

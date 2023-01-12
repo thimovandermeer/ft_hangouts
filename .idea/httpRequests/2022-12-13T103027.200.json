@@ -1,0 +1,16 @@
+[
+  {
+    "messageId": "15b72a1d-068c-462e-9859-6a18ba46729b",
+    "channelID": "1",
+    "sender": "Peter",
+    "receiver": "Dave",
+    "text": "doei doei doei"
+  },
+  {
+    "messageId": "50b57292-f56f-4ba9-a2d1-426d19aaaad8",
+    "channelID": "1",
+    "sender": "Peter",
+    "receiver": "Dave",
+    "text": "doei doei doei"
+  }
+]

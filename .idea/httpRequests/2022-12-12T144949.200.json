@@ -1,0 +1,68 @@
+[
+  {
+    "messageId": "b7f6a4bc-2cea-4aa7-ac8b-1f02b1e87ad7",
+    "sender": "Henk",
+    "receiver": "Ingrid",
+    "text": "Bonjour!"
+  },
+  {
+    "messageId": "4369612c-d69e-4e00-b892-7bb19e73adbe",
+    "sender": "Henk",
+    "receiver": "Ingrid",
+    "text": "Bonjour!"
+  },
+  {
+    "messageId": "96db3d94-24ee-41cb-8248-57b21c9efb3f",
+    "sender": "Henk",
+    "receiver": "Ingrid",
+    "text": "Bonjour!"
+  },
+  {
+    "messageId": "1fedba25-33b5-4bfd-af6d-78f49f28edbb",
+    "sender": "Henk",
+    "receiver": "Ingrid",
+    "text": "Bonjour!"
+  },
+  {
+    "messageId": "c3a3d02d-6196-4764-b8cb-ecc22fe6f193",
+    "sender": "Peter",
+    "receiver": "Dave",
+    "text": "dahaaaaaaag"
+  },
+  {
+    "messageId": "9136ed96-f2eb-4d6a-aa70-c6efb7906d36",
+    "sender": "Peter",
+    "receiver": "Dave",
+    "text": "dahaaaaaaag"
+  },
+  {
+    "messageId": "d5a973cb-d353-462c-ad6d-b6769a015da5",
+    "sender": "Peter",
+    "receiver": "Dave",
+    "text": "dahaaaaaaag"
+  },
+  {
+    "messageId": "62e317c9-f64e-4992-974b-1e225ed058f6",
+    "sender": "Peter",
+    "receiver": "Dave",
+    "text": "dahaaaaaaag"
+  },
+  {
+    "messageId": "367ce98c-e0dd-42e9-af0e-7becd1e67234",
+    "sender": "Peter",
+    "receiver": "Dave",
+    "text": "dahaaaaaaag"
+  },
+  {
+    "messageId": "4f8692c4-15b6-49ec-ad26-e9d676abd226",
+    "sender": "Peter",
+    "receiver": "Dave",
+    "text": "dahaaaaaaag"
+  },
+  {
+    "messageId": "b16d2531-7642-476b-88cf-a2d6b5812097",
+    "sender": "Peter",
+    "receiver": "Dave",
+    "text": "dahaaaaaaag"
+  }
+]
