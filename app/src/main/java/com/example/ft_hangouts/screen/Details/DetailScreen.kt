@@ -33,19 +33,19 @@ fun DetailsScreen(
     LazyColumn(modifier = Modifier.fillMaxWidth(1f)) {
         // Add a single item
         item {
-            Text(text = details.partnerInfo.firstName)
+            Text(text = "My firstname = ${details.partnerInfo.firstName}")
         }
         item {
-            Text(text = details.partnerInfo.lastName)
+            Text(text = "My lastname = ${details.partnerInfo.lastName}")
         }
         item {
-            Text(text = details.partnerInfo.profession)
+            Text(text = "My profession = ${details.partnerInfo.profession}")
         }
         item {
-            Text(text = details.partnerInfo.epicBeer)
+            Text(text = "My favorite beer = ${details.partnerInfo.epicBeer}")
         }
         item {
-            Text(text = details.partnerInfo.favoriteAnimal)
+            Text(text = "My favorite animal = ${details.partnerInfo.favoriteAnimal}")
         }
     }
 

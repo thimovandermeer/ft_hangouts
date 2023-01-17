@@ -13,9 +13,13 @@ private val DarkColorPalette = darkColors(
 )
 
 private val LightColorPalette = lightColors(
-    primary = Purple500,
-    primaryVariant = Purple700,
-    secondary = Teal200
+    background = Green100,
+    surface = Green50,
+    onSurface = Grey900,
+    primary = Grey50,
+    onPrimary = Grey900,
+    secondary = Grey700
+)
 
     /* Other default colors to override
     background = Color.White,
@@ -25,7 +29,6 @@ private val LightColorPalette = lightColors(
     onBackground = Color.Black,
     onSurface = Color.Black,
     */
-)
 
 @Composable
 fun Ft_hangoutsTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable () -> Unit) {
