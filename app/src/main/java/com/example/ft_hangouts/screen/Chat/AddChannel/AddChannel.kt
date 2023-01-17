@@ -29,11 +29,11 @@ fun AddChannel(
     val TAG = "add channel"
     Box(modifier = Modifier.fillMaxSize()) {
         if (state.value == AddChannelApiStatus.DONE) {
-            Log.d("Add channel view", "channelstate is done")
+            Log.d(TAG, "channelstate is done")
             navController.navigate(Routes.Chat.route)
             state.value = AddChannelApiStatus.INPROGRESS
         } else if (state.value == AddChannelApiStatus.ERROR) {
-            Log.d("Add channel view", "channelstate is done")
+            Log.d(TAG, "channelstate is done")
             Text(text = stringResource(R.string.channelalreadtexistsText))
         }
         Column(

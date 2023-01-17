@@ -1,7 +1,10 @@
 package com.example.ft_hangouts.screen.Chat.AddChannel
 
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Text
 import androidx.compose.material.TextField
 import androidx.compose.runtime.*
@@ -26,43 +29,49 @@ fun AddChatPartnerInfo(
     val favoriteAnimal = remember { mutableStateOf(TextFieldValue()) }
     val epicBeer = remember { mutableStateOf(TextFieldValue()) }
 
-    Spacer(modifier = Modifier.height(20.dp))
-    TextField(
-        label = { Text(text = stringResource(R.string.firstnameText)) },
-        value = firstname.value,
-        onValueChange = { firstname.value = it })
-    Spacer(modifier = Modifier.height(20.dp))
-    TextField(
+    Column(modifier = Modifier
+        .verticalScroll(rememberScrollState())
+        ) {
+        Spacer(modifier = Modifier.height(20.dp))
+        TextField(
+            label = { Text(text = stringResource(R.string.firstnameText)) },
+            value = firstname.value,
+            onValueChange = { firstname.value = it })
+        Spacer(modifier = Modifier.height(20.dp))
+        TextField(
 
-        label = { Text(text = stringResource(R.string.lastnameText)) },
-        value = lastname.value,
-        onValueChange = { lastname.value = it })
-    Spacer(modifier = Modifier.height(20.dp))
+            label = { Text(text = stringResource(R.string.lastnameText)) },
+            value = lastname.value,
+            onValueChange = { lastname.value = it }
+        )
+        Spacer(modifier = Modifier.height(20.dp))
 
-    Spacer(modifier = Modifier.height(20.dp))
-    TextField(
+        Spacer(modifier = Modifier.height(20.dp))
+        TextField(
 
-        label = { Text(text = stringResource(R.string.professionText)) },
-        value = profession.value,
-        onValueChange = { profession.value = it })
-    Spacer(modifier = Modifier.height(20.dp))
+            label = { Text(text = stringResource(R.string.professionText)) },
+            value = profession.value,
+            onValueChange = { profession.value = it })
+        Spacer(modifier = Modifier.height(20.dp))
 
-    Spacer(modifier = Modifier.height(20.dp))
-    TextField(
+        Spacer(modifier = Modifier.height(20.dp))
+        TextField(
 
-        label = { Text(text = stringResource(R.string.favoriteanimalText)) },
-        value = favoriteAnimal.value,
-        onValueChange = { favoriteAnimal.value = it })
-    Spacer(modifier = Modifier.height(20.dp))
+            label = { Text(text = stringResource(R.string.favoriteanimalText)) },
+            value = favoriteAnimal.value,
+            onValueChange = { favoriteAnimal.value = it })
+        Spacer(modifier = Modifier.height(20.dp))
 
-    Spacer(modifier = Modifier.height(20.dp))
-    TextField(
+        Spacer(modifier = Modifier.height(20.dp))
+        TextField(
 
-        label = { Text(text = stringResource(R.string.epicbeerText)) },
-        value = epicBeer.value,
-        onValueChange = { epicBeer.value = it })
-    Spacer(modifier = Modifier.height(20.dp))
-    val addPartner: PartnerInfo = PartnerInfo(firstname.component1().text, lastname.component1().text, profession.component1().text, favoriteAnimal.component1().text, epicBeer.component1().text)
-    registerChannelComposable(viewmodel, state, addPartner)
+            label = { Text(text = stringResource(R.string.epicbeerText)) },
+            value = epicBeer.value,
+            onValueChange = { epicBeer.value = it })
+        Spacer(modifier = Modifier.height(20.dp))
+        val addPartner: PartnerInfo = PartnerInfo(firstname.component1().text, lastname.component1().text, profession.component1().text, favoriteAnimal.component1().text, epicBeer.component1().text)
+        registerChannelComposable(viewmodel, state, addPartner)
+    }
+
 
 }
