@@ -44,8 +44,8 @@ object ChannelApi {
     }
 }
 interface ChannelApiService {
-    @GET("channels")
-    suspend fun getChannels() : List<Chats>
+    @GET("/channels/searchall/{personID}")
+    suspend fun getChannels(@Path("personID") personID: String) : List<Chats>
 
     @GET("channels/{id}")
     suspend fun getChannel(@Path("id") channelID: String) : Chats

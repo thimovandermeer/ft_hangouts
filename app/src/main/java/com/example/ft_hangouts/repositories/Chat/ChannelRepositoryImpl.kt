@@ -19,7 +19,10 @@ class ChannelRepositoryImpl @Inject constructor(
         return ChannelApi.retrofitService.getChannel(chatId)
     }
     override suspend fun getChats(): List<Chats> {
-        return ChannelApi.retrofitService.getChannels()
+        Log.d(TAG, "currentusername ${MainActivity.username}")
+        val res = ChannelApi.retrofitService.getChannels(MainActivity.username)
+        Log.d(TAG, "Res = $res")
+        return res
     }
     override suspend fun addChat(chatPartner: String) : AddChannelApiStatus {
         Log.d(TAG, "Creating chat with name ${chatPartner}")
