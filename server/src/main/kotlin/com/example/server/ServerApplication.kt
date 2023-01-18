@@ -41,8 +41,12 @@ class MessageService() {
         println("Channel = ${newChannelName}")
         println("Is dit wel wat ik wil: ${newChannelName.first_person}")
         // create a check if something already exists
-        var newChat = Chats(UUID.randomUUID().toString(), newChannelName.first_person, newChannelName.second_person, newChannelName.creator)
-        _channels.add(newChat)
+        println("Waarvoor moet ik nu checken $_channels")
+        if (!_channels.any { chats -> chats.first_person == newChannelName.first_person ||  chats.second_person == newChannelName.first_person}) {
+            println("Ik kom in de if")
+            var newChat = Chats(UUID.randomUUID().toString(), newChannelName.first_person, newChannelName.second_person, newChannelName.creator)
+            _channels.add(newChat)
+        }
     }
 
     fun getChannel(ChannelID: String) : Chats {
@@ -59,9 +63,13 @@ class MessageService() {
 
     fun getPerson(person: String) : PartnerInfo {
         println("Seaching person info with id ${person}")
+        println("person array = $_persons")
         val res = _persons.filter { partnerInfo ->  partnerInfo.firstName == person}
         println("found person ${res}")
-        return res[0]
+        return if (res.isNotEmpty())
+            res[0]
+        else
+            PartnerInfo("", "", "", "", "")
     }
 
 }

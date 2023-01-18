@@ -28,8 +28,12 @@ fun ChannelListItem(
     navController: NavController
 ) {
     val TAG = "ChannelListItem"
+    val person = if(MainActivity.username == chats.first_person)
+        chats.second_person
+    else
+        chats.first_person
     val onClickChats = {navController.navigate("MessageList/${chats.channelID}")}
-    val onClickDetail = {navController.navigate("Details/${chats.first_person}")}
+    val onClickDetail = {navController.navigate("Details/${person}")}
     Row( // 1
         modifier = Modifier
 
@@ -38,10 +42,6 @@ fun ChannelListItem(
         verticalAlignment = Alignment.CenterVertically
     ) {
         Column(modifier = Modifier.padding(start = 8.dp)) {
-            val person = if(MainActivity.username == chats.first_person)
-                chats.second_person
-            else
-                chats.first_person
             Text(
                 text = person,
                 style = TextStyle(fontWeight = FontWeight.Bold),
