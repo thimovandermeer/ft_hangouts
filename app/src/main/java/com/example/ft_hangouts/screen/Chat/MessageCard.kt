@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.ft_hangouts.MainActivity
 import com.example.ft_hangouts.repositories.Chat.Message
 
 @Composable
@@ -24,7 +25,7 @@ fun MessageCard(message: Message) { // 1
             .fillMaxWidth()
             .padding(horizontal = 8.dp, vertical = 4.dp),
         horizontalAlignment = when { // 2
-            message.isMine -> Alignment.End
+            message.sender == MainActivity.username -> Alignment.End
             else -> Alignment.Start
         },
     ) {
