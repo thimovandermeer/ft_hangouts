@@ -18,6 +18,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.ft_hangouts.MainActivity
 import com.example.ft_hangouts.R
 import com.example.ft_hangouts.repositories.Chat.Chats
 
@@ -36,9 +37,13 @@ fun ChannelListItem(
             .fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Column(modifier = Modifier.padding(start = 8.dp)) { // 3
+        Column(modifier = Modifier.padding(start = 8.dp)) {
+            val person = if(MainActivity.username == chats.first_person)
+                chats.second_person
+            else
+                chats.first_person
             Text(
-                text = chats.first_person.toString(),
+                text = person,
                 style = TextStyle(fontWeight = FontWeight.Bold),
                 fontSize = 18.sp,
             )
