@@ -32,8 +32,9 @@ class MessageService() {
         _messages.add(message)
     }
 
-    fun findChannels(): MutableList<Chats> {
-        return _channels
+    fun findChannels(personID: String): List<Chats> {
+        val res = _channels.filter { chats ->  chats.first_person == personID || chats.second_person == personID}
+        return res
     }
 
     fun saveChannel(newChannelName : Chats) {
@@ -86,9 +87,9 @@ class MessageService() {
             service.save(message)
         }
 
-        @GetMapping("/channels")
-        fun indexChannels() : MutableList<Chats> =
-            service.findChannels()
+        @GetMapping("/channels/searchall/{personID}")
+        fun indexChannels(@PathVariable personID : String) : List<Chats> =
+            service.findChannels(personID)
 
         @GetMapping("/channels/{channelID}")
         fun getChannelInfo(@PathVariable channelID: String) : Chats =
