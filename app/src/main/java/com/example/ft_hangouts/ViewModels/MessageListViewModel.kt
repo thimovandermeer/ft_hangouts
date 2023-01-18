@@ -1,18 +1,22 @@
 package com.example.ft_hangouts.ViewModels
 
 import android.util.Log
-import androidx.compose.runtime.MutableState
-import androidx.lifecycle.*
-import com.example.ft_hangouts.networklayer.MessageApi
-import com.example.ft_hangouts.repositories.Chat.ChannelRepository
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.ft_hangouts.repositories.Chat.Message
 import com.example.ft_hangouts.repositories.Chat.MessageRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import java.lang.Thread.sleep
 import javax.inject.Inject
 
 enum class MessagesApiStatus {LOADING, ERROR, DONE}
@@ -41,6 +45,26 @@ class MessageListViewModel @Inject constructor(
         Log.d(TAG, "To save ${inputValue}")
         getMessages()
     }
+
+    /*
+    It hurts my eyes but I have to dont want to implement sockets to create a proper publish subscribe pattern
+     */
+    init {
+        updateMessages()
+    }
+
+    fun updateMessages() {
+        CoroutineScope(Dispatchers.IO).launch {
+            var time = 0
+            while (true) {
+                Log.d(TAG, "updating messages for the $time")
+                getMessages()
+                time++
+                sleep(500)
+            }
+        }
+    }
+
 
     // dit moet naar de repository impl
     fun getMessages() {
