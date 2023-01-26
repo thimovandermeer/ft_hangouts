@@ -1,5 +1,6 @@
 package com.example.ft_hangouts.screen
 
+import android.util.Log
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -9,6 +10,7 @@ import com.example.ft_hangouts.screen.Chat.AddChannel
 import com.example.ft_hangouts.screen.Chat.ChatPage
 import com.example.ft_hangouts.screen.Chat.MessageListScreen
 import com.example.ft_hangouts.screen.Details.DetailsScreen
+import com.example.ft_hangouts.screen.Details.EditPersonInfo
 
 
 @Composable
@@ -50,5 +52,9 @@ fun ScreenMain(){
                 person = backStackEntry.arguments?.getString("first_person")
             )
         }
+
+        composable("EditPersonInfo/{person}") { backStackEntry ->
+                backStackEntry.arguments?.getString("person")?.let { EditPersonInfo(person = it) }
+            }
+        }
     }
-}
