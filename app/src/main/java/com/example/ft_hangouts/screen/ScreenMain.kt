@@ -54,7 +54,12 @@ fun ScreenMain(){
         }
 
         composable("EditPersonInfo/{person}") { backStackEntry ->
-                backStackEntry.arguments?.getString("person")?.let { EditPersonInfo(person = it) }
+            backStackEntry.arguments?.getString("person")?.let {
+                EditPersonInfo(
+                    person = it,
+                    navController = navController
+                )
             }
+        }
         }
     }

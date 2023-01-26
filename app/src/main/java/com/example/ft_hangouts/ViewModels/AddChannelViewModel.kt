@@ -41,4 +41,26 @@ class AddChannelViewModel @Inject constructor(
         return ChannelRepository.savePersonInfo(partnerInfo)
     }
 
+    suspend fun editPersonInfo(
+        person: String,
+        firstName: String,
+        lastName: String,
+        profession: String,
+        favoritebeer: String,
+        favoriteAnimal: String) {
+        val newInfo: PartnerInfo = PartnerInfo(
+            firstName,
+            lastName,
+            profession,
+            favoritebeer,
+            favoriteAnimal
+            )
+        Log.d(TAG, "What is the person here $person")
+        return ChannelRepository.editPersonInfo(newInfo, person)
+    }
+
+    fun createPersonInfo() {
+
+    }
+
 }

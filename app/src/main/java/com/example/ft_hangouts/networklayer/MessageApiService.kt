@@ -58,5 +58,8 @@ interface ChannelApiService {
 
     @GET("person/{person}")
     suspend fun getPersonInfo(@Path("person")person: String) : PartnerInfo
+
+    @POST("person/{person}")
+    suspend fun editPersonInfo(@Path("person")person: String, @Body partnerInfo: PartnerInfo)
 }
 

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*
 import java.util.*
 
 import org.springframework.data.annotation.Id
+import kotlin.reflect.jvm.internal.impl.types.checker.NewCapturedType
 
 
 @Service
@@ -72,6 +73,48 @@ class MessageService() {
             PartnerInfo("", "", "", "", "")
     }
 
+    fun changeUsersInChat(oldPerson : String, newPerson: String) {
+        println("old channels list ${_channels}")
+        _channels.filter { Chats -> Chats.first_person == oldPerson}.forEach { Chats -> Chats.first_person = newPerson }
+        _channels.filter { Chats -> Chats.second_person == oldPerson}.forEach { Chats -> Chats.second_person = newPerson }
+        println("new channels list ${_channels}")
+    }
+
+    fun editPerson(person: String, PersonInfo: PartnerInfo) {
+        var newInfo = PartnerInfo("", "", "", "", "")
+        val toChange_res = _persons.filter { it.firstName == person}
+        val toChange = toChange_res[0]
+        if (PersonInfo.firstName == "") {
+            newInfo.firstName = toChange.firstName
+        } else {
+            newInfo.firstName = PersonInfo.firstName
+        }
+        if (PersonInfo.lastName == "") {
+            newInfo.lastName = toChange.lastName
+        } else {
+            newInfo.lastName = PersonInfo.lastName
+        }
+
+        if (PersonInfo.profession == "") {
+            newInfo.profession = toChange.profession
+        } else {
+            newInfo.profession = PersonInfo.profession
+        }
+        if(PersonInfo.epicBeer == "") {
+            newInfo.epicBeer = toChange.epicBeer
+        } else {
+            newInfo.epicBeer = PersonInfo.epicBeer
+        }
+
+        if(PersonInfo.favoriteAnimal == "") {
+            newInfo.favoriteAnimal = toChange.favoriteAnimal
+        } else {
+            newInfo.favoriteAnimal = PersonInfo.favoriteAnimal
+        }
+        _persons.remove(toChange)
+        _persons.add(newInfo)
+        changeUsersInChat(toChange.firstName, newInfo.firstName)
+    }
 }
     @SpringBootApplication
     class ServerApplication
@@ -115,6 +158,10 @@ class MessageService() {
         @GetMapping("/person/{person}")
         fun getPersonInfo(@PathVariable person: String) : PartnerInfo =
             service.getPerson(person)
+
+        @PostMapping("/person/{person}")
+        fun editPersonInfo(@PathVariable person:String, @RequestBody personInfo: PartnerInfo) =
+            service.editPerson(person, personInfo)
     }
 
 

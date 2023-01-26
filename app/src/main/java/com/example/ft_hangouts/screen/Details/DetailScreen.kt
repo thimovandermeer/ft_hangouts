@@ -41,7 +41,7 @@ fun DetailsScreen(
     Scaffold(
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { navController.navigate("EditPersonInfo/{person}") },
+                onClick = { navController.navigate("EditPersonInfo/$person") },
             ) {
             }
         }

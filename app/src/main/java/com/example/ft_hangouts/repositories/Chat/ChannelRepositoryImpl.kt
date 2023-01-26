@@ -5,6 +5,7 @@ import com.example.ft_hangouts.MainActivity
 import com.example.ft_hangouts.ViewModels.AddChannelApiStatus
 import com.example.ft_hangouts.ViewModels.PartnerInfo
 import com.example.ft_hangouts.networklayer.ChannelApi
+import kotlinx.coroutines.channels.Channel
 import javax.inject.Inject
 
 class ChannelRepositoryImpl @Inject constructor(
@@ -48,6 +49,10 @@ class ChannelRepositoryImpl @Inject constructor(
     override suspend fun getPersonInfo(person: String): PartnerInfo {
         Log.d(TAG, "Retrieve person info with ID ${person}")
         return ChannelApi.retrofitService.getPersonInfo(person)
+    }
+
+    override suspend fun editPersonInfo(partnerInfo: PartnerInfo, person: String) {
+        return ChannelApi.retrofitService.editPersonInfo(person, partnerInfo)
     }
 
 }

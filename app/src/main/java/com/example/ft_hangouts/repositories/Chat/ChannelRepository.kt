@@ -17,4 +17,5 @@ interface ChannelRepository {
     suspend fun addChat(channelName: String) : AddChannelApiStatus
     suspend fun savePersonInfo(partnerInfo: PartnerInfo)
     suspend fun getPersonInfo(person: String) : PartnerInfo
+    suspend fun editPersonInfo(partnerInfo: PartnerInfo, person: String)
 }
