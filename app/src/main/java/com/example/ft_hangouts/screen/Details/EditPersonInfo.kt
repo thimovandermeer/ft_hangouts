@@ -80,9 +80,9 @@ fun EditPersonInfo(
 
         Spacer(modifier = Modifier.height(30.dp))
         TextField(
-            label = { Text(text = stringResource(R.string.epicbeerText)) },
-            value = favoritebeer.value,
-            onValueChange = { favoritebeer.value = it }
+            label = { Text(text = stringResource(R.string.favoriteanimalText)) },
+            value = favoriteanimal.value,
+            onValueChange = { favoriteanimal.value = it }
         )
         
         Button(

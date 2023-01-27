@@ -32,4 +32,10 @@
     <string name="registerchannelText">Register</string>
     <string name="chatchannellistitemText">Chat</string>
     <string name="persondetailsText">Person details</string>
+    <string name="changepersondetailsText">change Person details</string>
+    <string name="changingpersoninfoText">You are about to change the person details of </string>
+    <string name="submitchangesText">You are about to change the person details of </string>
+
+
+
 </resources>

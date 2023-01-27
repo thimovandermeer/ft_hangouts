@@ -33,6 +33,9 @@
     <string name="forgotpasswordTextForgotPassword">Wachtwoord vergeten</string>
     <string name="passwordalreadyexistsText">Wachtwoord bestaat al</string>
     <string name="passwordinvalidText">Wachtwoord incorrect</string>
+    <string name="changepersondetailsText">verander persoonlijke details</string>
+    <string name="changingpersoninfoText">U staat op het punt om de persoonlijke info aan te passen van </string>
+    <string name="submitchangesText">Pas wijzigingen toe </string>
 
 
 

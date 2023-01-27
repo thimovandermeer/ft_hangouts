@@ -1,6 +1,7 @@
 package com.example.ft_hangouts.screen.Details
 
 import android.util.Log
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -16,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.modifier.modifierLocalOf
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import com.example.ft_hangouts.Routes
 import com.example.ft_hangouts.ViewModels.DetailsScreenViewModel
@@ -26,6 +28,11 @@ fun DetailsScreen(
     person: String?,
     viewModel: DetailsScreenViewModel = hiltViewModel()
 ) {
+    BackHandler(
+        enabled = true,
+        onBack = {navController.navigate(Routes.Chat.route)}
+    )
+
     val details by viewModel.details.collectAsState()
 
     if (!viewModel.loaded) {
