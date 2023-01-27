@@ -57,7 +57,6 @@ class MessageListViewModel @Inject constructor(
         CoroutineScope(Dispatchers.IO).launch {
             var time = 0
             while (true) {
-                Log.d(TAG, "updating messages for the $time")
                 getMessages()
                 time++
                 sleep(500)
